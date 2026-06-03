@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>AFINE - Finanzas Básicas</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .header-bar {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-small {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 28px;
+            color: #3b82f6;
+        }
+        .logo-text { color: white; font-size: 24px; font-weight: 700; letter-spacing: 4px; }
+        .level-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 25px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 60px;
+            height: calc(100% - 110px);
+            display: flex;
+            flex-direction: column;
+        }
+        .course-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .course-subtitle {
+            font-size: 28px;
+            color: #60a5fa;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .levels {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 25px;
+        }
+        .level {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .level-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+        }
+        .level-content h3 {
+            font-size: 28px;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .level-content p {
+            font-size: 18px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.2));
+            border: 1px solid #3b82f6;
+            border-radius: 15px;
+            padding: 20px 40px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .result-box span {
+            font-size: 20px;
+            color: #60a5fa;
+        }
+        .result-box strong {
+            color: white;
+            font-size: 22px;
+        }
+        .contact-btn {
+            display: inline-block;
+            background: #22c55e;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .arrow {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .arrow svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="post">
+        <div class="header-bar">
+            <div class="logo-small">
+                <div class="logo-icon">A</div>
+                <span class="logo-text">AFINE</span>
+            </div>
+            <div class="level-badge">CURSO POPULAR</div>
+        </div>
+        <div class="content">
+            <h1 class="course-title">FINANZAS BÁSICAS</h1>
+            <p class="course-subtitle">Niveles I, II y III — Domina las inversiones desde cero</p>
+            <div class="levels">
+                <div class="level">
+                    <div class="level-number">I</div>
+                    <div class="level-content">
+                        <h3>Fundamentos de Inversión</h3>
+                        <p>Renta fija vs variable, perfiles de inversor, productos bancarios básicos</p>
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="level-number">II</div>
+                    <div class="level-content">
+                        <h3>Inversiones en Bolsa</h3>
+                        <p>Acciones, ETFs, análisis fundamental, detectando fraudes</p>
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="level-number">III</div>
+                    <div class="level-content">
+                        <h3>Financiamiento Personal</h3>
+                        <p>Créditos, préstamos, negociación bancaria, detección de trampas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="result-box">
+                    <span>Al terminar sabrás <strong>elegir la mejor inversión</strong> según tu perfil</span>
+                </div>
+                <br>
+                <a href="#" class="contact-btn">WhatsApp: 999 453 0002</a>
+            </div>
+        </div>
+        <div class="arrow">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+    </div>
+</body>
+</html>

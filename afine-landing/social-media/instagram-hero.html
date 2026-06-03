@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFINE - Post Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .post-container {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image:
+                radial-gradient(circle at 25% 25%, #3b82f6 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #3b82f6 2px, transparent 2px);
+            background-size: 60px 60px;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px;
+        }
+        .header {
+            text-align: center;
+        }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 48px;
+            color: white;
+        }
+        .logo-text {
+            text-align: left;
+        }
+        .logo-text h1 {
+            font-size: 56px;
+            color: white;
+            letter-spacing: 8px;
+        }
+        .logo-text span {
+            font-size: 18px;
+            color: #94a3b8;
+            letter-spacing: 2px;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .headline {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 30px rgba(59, 130, 246, 0.3);
+        }
+        .highlight {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .sub-headline {
+            font-size: 28px;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 64px;
+            font-weight: 800;
+            color: #3b82f6;
+        }
+        .stat-label {
+            font-size: 18px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+        }
+        .contact-info {
+            margin-top: 30px;
+            color: #64748b;
+            font-size: 20px;
+        }
+        .badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: #22c55e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .badge-dot {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <div class="bg-pattern"></div>
+        <div class="badge">
+            <span class="badge-dot"></span>
+            INSCRIPCIONES ABIERTAS
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="logo">
+                    <div class="logo-icon">A</div>
+                    <div class="logo-text">
+                        <h1>AFINE</h1>
+                        <span>Asesoría Financiera de Negocios</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <h2 class="headline">
+                    FINANZAS REALES<br>
+                    <span class="highlight">PARA RESULTADOS REALES</span>
+                </h2>
+                <p class="sub-headline">
+                    35 años de experiencia en banca.<br>
+                    Enfoque 100% práctico. Sin teorías obsoletas.
+                </p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">35</div>
+                        <div class="stat-label">Años de experiencia</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Cursos especializados</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Horas por curso</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="#" class="cta">Contactar ahora</a>
+                <div class="contact-info">
+                    WhatsApp: 999 453 0002 | afinemerida@gmail.com
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

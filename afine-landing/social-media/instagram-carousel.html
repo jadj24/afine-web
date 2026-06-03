@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>AFINE - Carrusel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .carousel {
+            width: 1080px;
+            display: flex;
+            gap: 20px;
+        }
+        .slide {
+            flex: 1;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .slide:hover {
+            transform: scale(1.02);
+        }
+        .slide-header {
+            padding: 30px;
+            text-align: center;
+        }
+        .slide-1 .slide-header { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .slide-2 .slide-header { background: linear-gradient(135deg, #10b981, #059669); }
+        .slide-3 .slide-header { background: linear-gradient(135deg, #a855f7, #7c3aed); }
+        .slide-number {
+            font-size: 100px;
+            font-weight: 800;
+            color: rgba(255,255,255,0.2);
+            line-height: 1;
+        }
+        .slide-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 5px;
+        }
+        .slide-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+        }
+        .slide-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slide-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+        }
+        .slide-item-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .slide-1 .slide-item-icon { background: #3b82f6; }
+        .slide-2 .slide-item-icon { background: #10b981; }
+        .slide-3 .slide-item-icon { background: #a855f7; }
+        .slide-item-text {
+            font-size: 16px;
+            color: white;
+        }
+        .slide-footer {
+            padding: 25px 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        .slide-price {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+        .slide-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .slide-1 .slide-cta { background: #3b82f6; color: white; }
+        .slide-2 .slide-cta { background: #10b981; color: white; }
+        .slide-3 .slide-cta { background: #a855f7; color: white; }
+        .swipe-hint {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .swipe-hint span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .swipe-hint svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="slide slide-1">
+            <div class="slide-header">
+                <div class="slide-number">01</div>
+                <div class="slide-title">Finanzas Básicas</div>
+                <div class="slide-subtitle">Niveles I, II y III</div>
+            </div>
+            <div class="slide-content">
+                <div class="slide-item">
+                    <div class="slide-item-icon">I</div>
+                    <div class="slide-item-text">Fundamentos de inversión</div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-item-icon">II</div>
+                    <div class="slide-item-text">Inversiones en bolsa</div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-item-icon">III</div>
+                    <div class="slide-item-text">Financiamiento personal</div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="slide-price">5 sesiones • 10 horas</div>
+                <a href="#" class="slide-cta">Más información</a>
+            </div>
+        </div>
+        <div class="slide slide-2">
+            <div class="slide-header">
+                <div class="slide-number">02</div>
+                <div class="slide-title">Financiamiento</div>
+                <div class="slide-subtitle">Para Emprendedores</div>
+            </div>
+            <div class="slide-content">
+                <div class="slide-item">
+                    <div class="slide-item-icon">🏦</div>
+                    <div class="slide-item-text">Créditos y bancarias</div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-item-icon">💰</div>
+                    <div class="slide-item-text">Financieras alternativas</div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-item-icon">📋</div>
+                    <div class="slide-item-text">Negociación experta</div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="slide-price">5 sesiones • 10 horas</div>
+                <a href="#" class="slide-cta">Más información</a>
+            </div>
+        </div>
+        <div class="slide slide-3">
+            <div class="slide-header">
+                <div class="slide-number">03</div>
+                <div class="slide-title">IA en Trading</div>
+                <div class="slide-subtitle">Modelos Predictivos</div>
+            </div>
+            <div class="slide-content">
+                <div class="slide-item">
+                    <div class="slide-item-icon">📊</div>
+                    <div class="slide-item-text">Análisis fundamental</div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-item-icon">📈</div>
+                    <div class="slide-item-text">Análisis técnico</div>
+                </div>
+                <div class="slide-item">
+                    <div class="slide-item-icon">🤖</div>
+                    <div class="slide-item-text">Machine learning</div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div class="slide-price">5 sesiones • 10 horas</div>
+                <a href="#" class="slide-cta">Más información</a>
+            </div>
+        </div>
+    </div>
+    <div class="swipe-hint">
+        <span>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+            Desliza para ver más cursos
+        </span>
+    </div>
+</body>
+</html>
