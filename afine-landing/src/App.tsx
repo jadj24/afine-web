@@ -213,20 +213,17 @@ function App() {
             35 años de experiencia en banca a nivel dirección te esperan
           </p>
           <div className="relative aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl shadow-blue-500/10">
-            {/* Replace the videoId with your actual YouTube video ID */}
-            <iframe
+            <video
               className="w-full h-full"
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-              title="Video de presentación AFINE"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <div className="text-center mt-6">
-            <p className="text-slate-400 text-sm">
-              <span className="text-blue-400 font-semibold">💡 Tip:</span> Reemplaza <code className="bg-slate-800 px-2 py-1 rounded">YOUR_VIDEO_ID</code> con el ID de tu video de YouTube
-            </p>
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src="/presentacion-afine.mp4" type="video/mp4" />
+              Tu navegador no soporta videos HTML5.
+            </video>
           </div>
         </div>
       </section>
