@@ -173,9 +173,7 @@ function App() {
             Inscripciones abiertas
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-              AFINE
-            </span>
+            <img src="/logo-afine.png" alt="AFINE" className="inline-block h-16 md:h-20 mb-4" />
             <br />
             Finanzas Reales para<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
@@ -187,7 +185,7 @@ function App() {
             que nunca aplicarás, y metodologías obsoletas que no funcionan en el mundo real.
           </p>
           <p className="text-lg text-white font-medium mb-8">
-            En <span className="text-blue-400 font-bold">AFINE</span> somos diferente. Nuestro instructor tiene
+            Somos diferente. Nuestro instructor tiene
             <span className="text-blue-400 font-bold"> 35 años de experiencia en banca</span> (nivel dirección),
             y nuestro enfoque es <span className="text-blue-400 font-bold">100% práctico</span>:
             teoría básica + aplicación real + casos del día a día.
@@ -207,7 +205,7 @@ function App() {
       <section className="py-20 px-4 bg-gradient-to-b from-slate-800/50 to-transparent">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
-            Conoce a tu Instructor
+            Conoce Afine
           </h2>
           <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
             35 años de experiencia en banca a nivel dirección te esperan
