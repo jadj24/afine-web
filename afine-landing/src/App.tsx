@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 
-// Icons as SVG components
 const CheckCircle = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -38,12 +37,6 @@ const Shield = () => (
   </svg>
 )
 
-const Phone = () => (
-  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-  </svg>
-)
-
 const Mail = () => (
   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -69,6 +62,18 @@ const WhatsApp = () => (
   </svg>
 )
 
+const Banknote = () => (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+  </svg>
+)
+
+const UserGroup = () => (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+  </svg>
+)
+
 function App() {
   const [activeCourse, setActiveCourse] = useState<number | null>(null)
 
@@ -79,11 +84,12 @@ function App() {
       subtitle: "Niveles I, II y III",
       icon: <ChartBar />,
       color: "from-blue-600 to-blue-800",
+      price: "$2,500 MXN",
       target: "Emprendedores, adultos mayores, jóvenes estudiantes y profesionales sin experiencia financiera",
       modules: [
-        { name: "Nivel I", content: "Fundamentos de inversión: renta fija vs variable, perfiles de inversor, productos bancarios básicos" },
-        { name: "Nivel II", content: "Inversiones en bolsa: acciones, ETF's, análisis fundamental, evitando fraudes" },
-        { name: "Nivel III", content: "Financiamiento personal: créditos, préstamos, negociación bancaria, detección de trampas" }
+        { name: "Nivel I - Fundamentos de Inversión", content: "Renta fija vs variable, perfiles de inversor, productos bancarios básicos" },
+        { name: "Nivel II - Inversiones en Bolsa", content: "Acciones, ETF's, análisis fundamental, evitando fraudes" },
+        { name: "Nivel III - Financiamiento Personal", content: "Créditos, préstamos, negociación bancaria, detección de trampas" }
       ],
       result: "Al terminar, sabrás elegir la mejor opción de inversión según tu perfil Y detectar empresas financieras fraudulentas.",
       includes: ["Material práctico", "Casos reales", "Guest speakers (banqueros e inversionistas)"]
@@ -94,29 +100,32 @@ function App() {
       subtitle: "Domina las opciones de financiamiento",
       icon: <Currency />,
       color: "from-emerald-600 to-emerald-800",
+      price: "$2,500 MXN",
       target: "Emprendedores, empresarios PyMEs, tesoreros de empresas medianas",
       modules: [
-        { name: "Módulo 1 - Conoce tus opciones", content: "Créditos bancarios, financieras alternativas, coinversionistas, programas gubernamentales" },
-        { name: "Módulo 2 - Negocia como experto", content: "Cómo presentar tu proyecto, errores comunes, tips de negociación, lectura de cláusulas" }
+        { name: "Módulo 1 - Conoce tus opciones", content: "Créditos bancarios (hipotecarios, prendarios, revolventes), financieras alternativas (Sofom, Sapi), coinversionistas, programas gubernamentales (FIRA, Fondeadora, etc.)" },
+        { name: "Módulo 2 - Negocia como experto", content: "Cómo presentar tu proyecto a banqueros, errores comunes que arruinan tu solicitud, tips de negociación y asesoría personalizada, lectura de cláusulas y letra pequeña" }
       ],
       result: "Tomarás mejores decisiones de financiamiento para tu negocio.",
       includes: ["Asesoría personalizada", "Plantillas de negocio", "Simulacros de negociación"]
     },
     {
       id: 3,
-      title: "Modelos de IA para Trading Bursátil",
-      subtitle: "Aprende a crear tu propia herramienta",
+      title: "Modelos de IA para el Mercado Bursátil",
+      subtitle: "Minimiza riesgos con inteligencia artificial",
       icon: <Chip />,
       color: "from-purple-600 to-purple-800",
+      price: "$2,500 MXN",
       target: "Profesionistas, alumnos de finanzas/banca y emprendedores con conocimientos básicos de mercado bursátil",
+      prerequisite: "Prerrequisito: Haber completado Finanzas Básicas (Nivel I mínimo) o demostrar experiencia equivalente",
       modules: [
-        { name: "Módulo 1 - Análisis Fundamental", content: "Métricas financieras clave, lectura de reportes trimestrales, valoración de empresas" },
-        { name: "Módulo 2 - Análisis Técnico", content: "Indicadores (RSI, MACD), patrones de velas japonesas, soportes y resistencias" },
-        { name: "Módulo 3 - IA para Trading", content: "Machine learning para finanzas, construcción de modelos predictivos, backtesting" }
+        { name: "Módulo 1 - Análisis Fundamental", content: "Métricas financieras clave (P/E, ROE, deuda/EBITDA), lectura de reportes trimestrales, valoración de empresas" },
+        { name: "Módulo 2 - Análisis Técnico", content: "Indicadores (RSI, MACD, medias móviles), patrones de velas japonesas, soportes y resistencias" },
+        { name: "Módulo 3 - IA para minimizar riesgos", content: "Fundamentos de machine learning para finanzas, construcción de protocolo conservador o moderador en IA" }
       ],
       result: "Crearás un modelo de IA personalizado que minimice el riesgo en tus inversiones bursátiles.",
       includes: ["Código Python", "Bases de datos históricas", "Plantillas de modelos"],
-      prerequisite: "Prerrequisito: Haber completado Finanzas Básicas (Nivel I mínimo)"
+      note: "La IA te ayuda a analizar, TÚ decides"
     }
   ]
 
@@ -144,6 +153,7 @@ function App() {
           <div className="flex gap-6">
             <a href="#cursos" className="text-slate-300 hover:text-white transition">Cursos</a>
             <a href="#beneficios" className="text-slate-300 hover:text-white transition">Beneficios</a>
+            <a href="#metodologia" className="text-slate-300 hover:text-white transition">Metodología</a>
             <a href="#contacto" className="text-slate-300 hover:text-white transition">Contacto</a>
           </div>
         </div>
@@ -157,6 +167,10 @@ function App() {
             Inscripciones abiertas
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+              AFINE
+            </span>
+            <br />
             Finanzas Reales para<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
               Resultados Reales
@@ -169,7 +183,8 @@ function App() {
           <p className="text-lg text-white font-medium mb-8">
             En <span className="text-blue-400 font-bold">AFINE</span> somos diferente. Nuestro instructor tiene
             <span className="text-blue-400 font-bold"> 35 años de experiencia en banca</span> (nivel dirección),
-            y nuestro enfoque es <span className="text-blue-400 font-bold">100% práctico</span>.
+            y nuestro enfoque es <span className="text-blue-400 font-bold">100% práctico</span>:
+            teoría básica + aplicación real + casos del día a día.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#cursos" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition shadow-lg shadow-blue-500/25">
@@ -191,7 +206,7 @@ function App() {
           <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
             Un enfoque diferente centrado en lo que realmente necesitas saber
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 text-blue-400">
                 <ChartBar />
@@ -220,20 +235,6 @@ function App() {
               <h3 className="text-white font-semibold mb-2">IA como Aliada</h3>
               <p className="text-slate-400 text-sm">La IA como herramienta de apoyo, no como sustituto de tus decisiones.</p>
             </div>
-            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-              <div className="w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center mb-4 text-rose-400">
-                <Clock />
-              </div>
-              <h3 className="text-white font-semibold mb-2">5 Sesiones Presenciales</h3>
-              <p className="text-slate-400 text-sm">10 horas efectivas con horarios matutino y vespertino.</p>
-            </div>
-            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4 text-cyan-400">
-                <Location />
-              </div>
-              <h3 className="text-white font-semibold mb-2">Instalaciones Premium</h3>
-              <p className="text-slate-400 text-sm">Salas climatizadas con ambiente agradable para tu aprendizaje.</p>
-            </div>
           </div>
         </div>
       </section>
@@ -259,6 +260,9 @@ function App() {
                   </div>
                   <h3 className="text-xl font-bold text-white">{course.title}</h3>
                   <p className="text-white/80">{course.subtitle}</p>
+                  <div className="mt-4 inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full">
+                    <span className="text-white font-bold">{course.price}</span>
+                  </div>
                 </div>
                 <div className="p-6">
                   <div className="mb-4">
@@ -287,6 +291,11 @@ function App() {
                     <span className="text-xs text-slate-500 uppercase tracking-wide">Resultado</span>
                     <p className="text-slate-300 text-sm mt-1">{course.result}</p>
                   </div>
+                  {course.note && (
+                    <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 mb-4">
+                      <p className="text-purple-400 text-xs font-medium">💡 {course.note}</p>
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {course.includes.map((item, idx) => (
                       <span key={idx} className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded-full">
@@ -309,8 +318,80 @@ function App() {
         </div>
       </section>
 
+      {/* Methodology Section */}
+      <section id="metodologia" className="py-20 px-4 bg-slate-800/50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            Nuestra Metodología
+          </h2>
+          <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
+            ¿Por qué tomar nuestros cursos?
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-blue-400">
+                <Users />
+              </div>
+              <h3 className="text-white font-semibold mb-2">35 Años de Experiencia</h3>
+              <p className="text-slate-400 text-sm">Instructor con experiencia en banca a nivel dirección</p>
+            </div>
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center">
+              <div className="w-16 h-16 bg-emerald-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-emerald-400">
+                <ChartBar />
+              </div>
+              <h3 className="text-white font-semibold mb-2">100% Práctico</h3>
+              <p className="text-slate-400 text-sm">Cursos realistas y adaptados a la actualidad</p>
+            </div>
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-purple-400">
+                <Chip />
+              </div>
+              <h3 className="text-white font-semibold mb-2">IA como Herramienta</h3>
+              <p className="text-slate-400 text-sm">La decisión es nuestra, la IA nos apoya</p>
+            </div>
+            <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 text-center">
+              <div className="w-16 h-16 bg-amber-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-amber-400">
+                <Shield />
+              </div>
+              <h3 className="text-white font-semibold mb-2">Grupos Pequeños</h3>
+              <p className="text-slate-400 text-sm">Máximo 10 personas por curso</p>
+            </div>
+          </div>
+          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/30">
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-4xl font-bold text-blue-400 mb-2">5</div>
+                <div className="text-slate-300">Sesiones presenciales</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-emerald-400 mb-2">10</div>
+                <div className="text-slate-300">Horas efectivas</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-purple-400 mb-2">2</div>
+                <div className="text-slate-300">Horarios disponibles</div>
+              </div>
+            </div>
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
+              <div className="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-full">
+                <Clock />
+                <span className="text-slate-300 text-sm">Horarios: Matutino y Vespertino</span>
+              </div>
+              <div className="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-full">
+                <Location />
+                <span className="text-slate-300 text-sm">Salas climatizadas</span>
+              </div>
+              <div className="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-full">
+                <UserGroup />
+                <span className="text-slate-300 text-sm">Grupos de máximo 10 personas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
-      <section id="beneficios" className="py-20 px-4 bg-gradient-to-b from-slate-800/50 to-transparent">
+      <section id="beneficios" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
             ¿Por qué elegir AFINE?
@@ -340,8 +421,8 @@ function App() {
               ¿Listo para dominar tus finanzas?
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Costos accesibles, contenido práctico y la experiencia que necesitas para tomar
-              decisiones financieras inteligentes.
+              Costos accesibles: <span className="font-bold text-white">$2,500 MXN por curso</span><br />
+              5 sesiones de 2 horas (10 horas efectivas), en dos horarios.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
