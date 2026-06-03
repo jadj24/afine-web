@@ -125,7 +125,7 @@ function App() {
     {
       id: 3,
       title: "Introducción al mercado bursátil",
-      subtitle: "Análisis fundamental y técnico con modelos de IA",
+      subtitle: "Creando modelos de IA para análisis fundamental y técnico",
       icon: <Chip />,
       color: "from-purple-600 to-purple-800",
       price: "$2,500 MXN",
