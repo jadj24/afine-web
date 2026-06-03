@@ -96,7 +96,8 @@ function App() {
       subtitle: "Niveles I, II y III",
       icon: <ChartBar />,
       color: "from-blue-600 to-blue-800",
-      price: "$2,500 MXN",
+      price: "$2,500 MXN por módulo",
+      priceNote: "3 módulos disponibles",
       target: "Emprendedores, adultos mayores, jóvenes estudiantes y profesionales sin experiencia financiera",
       modules: [
         { name: "Nivel I - Fundamentos de Inversión", content: "Renta fija vs variable, perfiles de inversor, productos bancarios básicos" },
@@ -173,7 +174,7 @@ function App() {
             Inscripciones abiertas
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            <img src="/logo-afine.png" alt="AFINE" className="inline-block h-24 md:h-36 mb-4" />
+            <img src="/logo-afine.png" alt="AFINE" className="inline-block h-48 md:h-72 mb-4" />
             <br />
             Finanzas Reales para<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
@@ -289,8 +290,9 @@ function App() {
                   </div>
                   <h3 className="text-xl font-bold text-white">{course.title}</h3>
                   <p className="text-white/80">{course.subtitle}</p>
-                  <div className="mt-4 inline-flex items-center gap-2 bg-white/20 px-3 py-1 rounded-full">
+                  <div className="mt-4 inline-flex flex-col items-start gap-1 bg-white/20 px-3 py-1 rounded-full">
                     <span className="text-white font-bold">{course.price}</span>
+                    {course.priceNote && <span className="text-white/70 text-xs">{course.priceNote}</span>}
                   </div>
                 </div>
                 <div className="p-6">
