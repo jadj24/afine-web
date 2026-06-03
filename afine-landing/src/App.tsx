@@ -173,7 +173,7 @@ function App() {
             Inscripciones abiertas
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            <img src="/logo-afine.png" alt="AFINE" className="inline-block h-16 md:h-20 mb-4" />
+            <img src="/logo-afine.png" alt="AFINE" className="inline-block h-24 md:h-36 mb-4" />
             <br />
             Finanzas Reales para<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
