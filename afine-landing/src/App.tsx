@@ -124,8 +124,8 @@ function App() {
     },
     {
       id: 3,
-      title: "Modelos de IA para el Mercado Bursátil",
-      subtitle: "Minimiza riesgos con inteligencia artificial",
+      title: "Introducción al mercado bursátil",
+      subtitle: "Análisis fundamental y técnico con modelos de IA",
       icon: <Chip />,
       color: "from-purple-600 to-purple-800",
       price: "$2,500 MXN",
