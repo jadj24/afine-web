@@ -153,14 +153,8 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center font-bold text-white text-xl">
-              A
-            </div>
-            <div>
-              <span className="text-xl font-bold text-white">AFINE</span>
-              <span className="block text-xs text-slate-400">Asesoría Financiera de Negocios</span>
-            </div>
+          <div className="flex items-center gap-3">
+            <img src="/logo-afine.png" alt="AFINE" className="h-12" />
           </div>
           <div className="flex gap-6">
             <a href="#cursos" className="text-slate-300 hover:text-white transition">Cursos</a>
