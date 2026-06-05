@@ -213,14 +213,12 @@ function App() {
           </p>
           <div className="relative aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl shadow-blue-500/10">
             <video
-              className="w-full h-full"
+              className="w-full h-full object-cover"
               controls
-              autoPlay
-              muted
-              loop
               playsInline
+              preload="metadata"
             >
-              <source src="/presentacion-afine.mp4" type="video/mp4" />
+              <source src="/presentacion-afine-comprimido.mp4" type="video/mp4" />
               Tu navegador no soporta videos HTML5.
             </video>
           </div>
@@ -466,7 +464,7 @@ function App() {
                 Contactar por WhatsApp
               </a>
               <a
-                href="mailto:afinemeredida@gmail.com"
+                href="mailto:afinemerida@gmail.com"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-700 text-white font-semibold rounded-xl hover:bg-blue-600 transition"
               >
                 <Mail />
@@ -500,14 +498,14 @@ function App() {
               <p className="text-slate-400 text-sm">999 453 0002</p>
             </a>
             <a
-              href="mailto:afinemeredida@gmail.com"
+              href="mailto:afinemerida@gmail.com"
               className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-blue-500/50 hover:bg-blue-500/5 transition group"
             >
               <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 text-blue-400 group-hover:scale-110 transition">
                 <Mail />
               </div>
               <h3 className="text-white font-semibold mb-1">Correo electrónico</h3>
-              <p className="text-slate-400 text-sm">afinemeredida@gmail.com</p>
+              <p className="text-slate-400 text-sm">afinemerida@gmail.com</p>
             </a>
             <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700">
               <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4 text-purple-400">
