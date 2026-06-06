@@ -218,7 +218,7 @@ function App() {
               playsInline
               preload="metadata"
             >
-              <source src="/presentacion-afine-comprimido.mp4" type="video/mp4" />
+              <source src="/PresentacionAfine.mp4" type="video/mp4" />
               Tu navegador no soporta videos HTML5.
             </video>
           </div>
