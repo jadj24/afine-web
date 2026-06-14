@@ -219,6 +219,7 @@ section { padding:5rem 0; }
     width: 29px;
     height: 29px;
   }
+}
 
 @media (max-width:768px) {
 .nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:var(--navy); flex-direction:column; padding:1rem; gap:1rem; }
@@ -242,7 +243,22 @@ section { padding:5rem 0; }
 }
 .fade-in { opacity:0; transform:translateY(30px); transition:all 0.6s ease; }
 .fade-in.visible { opacity:1; transform:translateY(0); }
-.video-container.sound-active{box-shadow:0 0 30px rgba(201,184,150,0.4);border-color:rgba(201,184,150,0.5)}.video-container{transition:box-shadow .3s,border-color .3s}</style>
+.video-container.sound-active{box-shadow:0 0 30px rgba(201,184,150,0.4);border-color:rgba(201,184,150,0.5)}.video-container{transition:box-shadow .3s,border-color .3s}
+
+/* Responsive groups banner - fixes mobile layout */
+@media (max-width: 768px) {
+  .groups-banner > div > div[style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .groups-banner {
+    padding: 1.5rem !important;
+  }
+  .groups-banner h3 {
+    font-size: 1.4rem !important;
+  }
+}
+</style>
+<base target="_blank">
 <base target="_blank">
 <base target="_blank">
 <base target="_blank">
