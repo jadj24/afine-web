@@ -254,6 +254,40 @@ section { padding:5rem 0; }
 .fade-in.visible { opacity:1; transform:translateY(0); }
 .video-container.sound-active{box-shadow:0 0 30px rgba(201,184,150,0.4);border-color:rgba(201,184,150,0.5)}.video-container{transition:box-shadow .3s,border-color .3s}
 
+/* Testimonials */
+.testimonials { background: var(--off-white); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.testimonial-card { background: var(--white); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; }
+.testimonial-card::before { content: '"'; position: absolute; top: 1rem; right: 1.5rem; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold-light); line-height: 1; }
+.testimonial-stars { color: var(--gold); margin-bottom: 1rem; display: flex; gap: 0.15rem; }
+.testimonial-text { font-size: 0.95rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.7; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+.testimonial-avatar { width: 44px; height: 44px; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 0.9rem; }
+.testimonial-name { font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+.testimonial-role { font-size: 0.8rem; color: var(--gray); }
+
+/* Urgency banner */
+.urgency-section { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 1.5rem 0; text-align: center; position: relative; overflow: hidden; }
+.urgency-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.urgency-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.urgency-badge { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; animation: pulse 2s infinite; }
+.urgency-text { font-size: 1.1rem; font-weight: 600; }
+.urgency-text strong { color: #fef3c7; }
+.urgency-cta { background: white; color: #dc2626; padding: 0.6rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; }
+.urgency-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+/* Sticky CTA bar */
+.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--navy); padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 999; transform: translateY(100%); transition: transform 0.3s ease; box-shadow: 0 -4px 20px rgba(0,0,0,0.2); }
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-text { color: var(--gold); font-size: 0.9rem; font-weight: 600; }
+.sticky-cta-btn { background: var(--gold); color: var(--navy); padding: 0.5rem 1.25rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: all 0.3s; }
+.sticky-cta-btn:hover { background: var(--gold-light); }
+
+/* Responsive testimonials */
+@media (max-width: 1024px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
 /* Responsive groups banner - fixes mobile layout */
 @media (max-width: 768px) {
   .groups-banner > div > div[style*="grid-template-columns: repeat(2, 1fr)"] {
@@ -265,6 +299,8 @@ section { padding:5rem 0; }
   .groups-banner h3 {
     font-size: 1.4rem !important;
   }
+  .sticky-cta { flex-direction: column; gap: 0.5rem; padding: 0.75rem; }
+  .sticky-cta-text { font-size: 0.8rem; text-align: center; }
 }
 </style>
 <base target="_blank">
@@ -323,6 +359,16 @@ section { padding:5rem 0; }
 </div>
 </div>
 </section>
+
+<div class="urgency-section">
+<div class="container">
+<div class="urgency-content">
+<div class="urgency-badge">⚡ Cupo limitado</div>
+<div class="urgency-text">Solo <strong>10 plazas</strong> por grupo — Iniciamos <strong>20 de julio</strong></div>
+<a href="https://calendly.com/afinemerida/curso-finanzas" class="urgency-cta" target="_blank">Reservar mi lugar ahora</a>
+</div>
+</div>
+</div>
 
 <section class="about" id="conoce-afine">
 <div class="container">
@@ -518,6 +564,51 @@ Agendar en Calendly
 </div>
 </section>
 
+<section class="testimonials">
+<div class="container">
+<div class="section-header">
+<span class="section-label">Testimonios</span>
+<h2 class="section-title">Lo que dicen quienes ya tomaron el curso</h2>
+<p class="section-subtitle">Historias reales de personas que decidieron tomar control de sus finanzas</p>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card fade-in">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-text">"Por fin entiendo qué hace mi banco con mi dinero. El curso me abrió los ojos. Ya no me siento intimidado al hablar de inversiones."</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">MR</div>
+<div>
+<div class="testimonial-name">María R.</div>
+<div class="testimonial-role">Emprendedora, Mérida</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card fade-in">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-text">"Lo mejor es que no es teoría de libro. El instructor explica con ejemplos del día a día. Detecté una empresa fraudulenta que casi me engaña."</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">JL</div>
+<div>
+<div class="testimonial-name">José L.</div>
+<div class="testimonial-role">Ingeniero, 42 años</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card fade-in">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-text">"Mi hijo me recomendó el curso. A mis 65 años pensé que era tarde, pero la metodología es tan clara que cualquiera puede entenderla."</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">GC</div>
+<div>
+<div class="testimonial-name">Guadalupe C.</div>
+<div class="testimonial-role">Jubilada, Mérida</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <section class="trust-section">
 <div class="container">
 <div class="trust-box fade-in">
@@ -601,7 +692,7 @@ const fadeElements=document.querySelectorAll('.fade-in');
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.1});
 fadeElements.forEach(el=>observer.observe(el));
 
-// Video control - activa sonido al pasar el mouse
+// Video control - funciona en desktop y móvil
 const heroVideo=document.getElementById('heroVideo');
 const muteBtn=document.getElementById('muteBtn');
 const muteIcon=document.getElementById('muteIcon');
@@ -614,7 +705,7 @@ function updateSoundIcon(isMuted){
     soundIcon.style.display=isMuted?'none':'block';
 }
 
-function tryEnableSound(){
+function enableSound(){
     if(!heroVideo) return;
     heroVideo.muted=false;
     const playPromise=heroVideo.play();
@@ -624,7 +715,6 @@ function tryEnableSound(){
             if(muteBtn) muteBtn.title='Silenciar';
             videoContainer.classList.add('sound-active');
         }).catch(()=>{
-            // Navegador bloqueó autoplay con sonido
             heroVideo.muted=true;
             updateSoundIcon(true);
         });
@@ -639,28 +729,68 @@ function disableSound(){
     videoContainer.classList.remove('sound-active');
 }
 
+function toggleSound(e){
+    if(e) e.stopPropagation();
+    if(!heroVideo) return;
+    if(heroVideo.muted){
+        enableSound();
+    }else{
+        disableSound();
+    }
+}
+
 // Inicialmente muted por políticas del navegador
 if(heroVideo){
     heroVideo.muted=true;
     updateSoundIcon(true);
 }
 
+// Desktop: hover para activar/desactivar
 if(videoContainer&&heroVideo){
-    videoContainer.addEventListener('mouseenter',tryEnableSound);
+    videoContainer.addEventListener('mouseenter',enableSound);
     videoContainer.addEventListener('mouseleave',disableSound);
 }
 
+// Todos los dispositivos: click/tap en el botón para toggle
 if(muteBtn&&heroVideo){
-    muteBtn.addEventListener('click',()=>{
-        if(heroVideo.muted){
-            tryEnableSound();
-        }else{
-            disableSound();
+    muteBtn.addEventListener('click',toggleSound);
+    // Soporte táctil explícito para móvil
+    muteBtn.addEventListener('touchstart',function(e){
+        e.preventDefault();
+        toggleSound(e);
+    },{passive:false});
+}
+
+// También permitir tap en el video para toggle (más intuitivo en móvil)
+if(videoContainer&&heroVideo){
+    videoContainer.addEventListener('click',function(e){
+        if(e.target===muteBtn||e.target.closest('#muteBtn')) return;
+        toggleSound(e);
+    });
+    videoContainer.addEventListener('touchstart',function(e){
+        if(e.target===muteBtn||e.target.closest('#muteBtn')) return;
+        toggleSound(e);
+    },{passive:false});
+}
+
+// Sticky CTA bar - aparece al hacer scroll
+const stickyCta = document.getElementById('stickyCta');
+if(stickyCta){
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 600){
+            stickyCta.classList.add('visible');
+        } else {
+            stickyCta.classList.remove('visible');
         }
     });
 }
 </script>
-    <a href="https://wa.me/529994530002" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+    <div class="sticky-cta" id="stickyCta">
+<span class="sticky-cta-text">¿Listo para empezar? Próximo grupo: 20 de julio</span>
+<a href="https://calendly.com/afinemerida/curso-finanzas" class="sticky-cta-btn" target="_blank">Reservar ahora</a>
+</div>
+
+<a href="https://wa.me/529994530002" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
   <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
   </svg>
