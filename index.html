@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFINE - Finanzas Reales para Resultados Reales | Merida, Yucatan</title>
+<meta name="description" content="Cursos prácticos de finanzas personales, inversion y mercado bursátil en Merida, Yucatan. Impartidos por exdirector bancario con 35 años de experiencia. Primera clase sin compromiso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<!-- Favicon e iconos para celular -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#1a2a4a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AFINE">
+<style>
+:root { --navy:#1a2a4a; --navy-light:#243b66; --gold:#c9b896; --gold-light:#e8dcc8; --gold-dark:#a8946e; --white:#fff; --off-white:#f8f6f3; --gray:#6b7280; --gray-light:#e5e7eb; --text:#1f2937; --green:#059669; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',sans-serif; color:var(--text); line-height:1.6; background:var(--white); overflow-x:hidden; }
+.navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(26,42,74,0.97); backdrop-filter:blur(10px); padding:0.6rem 0; transition:all 0.3s ease; }
+.navbar.scrolled { box-shadow:0 4px 20px rgba(0,0,0,0.15); }
+.nav-container { max-width:1200px; margin:0 auto; padding:0 1.5rem; display:flex; justify-content:space-between; align-items:center; }
+.nav-logo { display:flex; align-items:center; gap:0.5rem; text-decoration:none; }
+.nav-logo img { height:70px; width:auto; }
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a { color:var(--gold-light); text-decoration:none; font-size:0.9rem; font-weight:500; transition:color 0.3s; position:relative; }
+.nav-links a:hover { color:var(--white); }
+.nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--gold); transition:width 0.3s; }
+.nav-links a:hover::after { width:100%; }
+.nav-cta { background:var(--gold); color:var(--navy); padding:0.5rem 1.25rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:0.85rem; transition:all 0.3s; }
+.nav-cta:hover { background:var(--gold-light); transform:translateY(-1px); }
+.mobile-menu-btn { display:none; background:none; border:none; color:var(--gold); font-size:1.5rem; cursor:pointer; }
+.hero { min-height:100vh; background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); display:flex; align-items:center; padding-top:80px; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; top:-50%; right:-20%; width:80%; height:200%; background:radial-gradient(ellipse,rgba(201,184,150,0.08) 0%,transparent 70%); pointer-events:none; }
+.hero-container { max-width:1200px; margin:0 auto; padding:2rem 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; position:relative; z-index:1; }
+.hero-logo-big { margin-bottom:1.5rem; }
+.hero-logo-big img { height:160px; width:auto; filter:brightness(0) invert(1); opacity:0.95; }
+.hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(201,184,150,0.15); border:1px solid rgba(201,184,150,0.3); color:var(--gold); padding:0.4rem 1rem; border-radius:50px; font-size:0.8rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:1.25rem; }
+.hero-badge .dot { width:8px; height:8px; background:var(--gold); border-radius:50%; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+.hero h1 { font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:var(--white); line-height:1.15; margin-bottom:1.25rem; }
+.hero h1 span { color:var(--gold); }
+.hero-subtitle { font-size:1.15rem; color:rgba(255,255,255,0.75); margin-bottom:1.5rem; max-width:500px; }
+.hero-meta { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:2rem; }
+.hero-meta-item { display:flex; align-items:center; gap:0.4rem; color:rgba(255,255,255,0.6); font-size:0.9rem; }
+.hero-meta-item svg { width:16px; height:16px; color:var(--gold); }
+.hero-cta-group { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:2rem; }
+.btn-primary { display:inline-flex; align-items:center; gap:0.5rem; background:var(--gold); color:var(--navy); padding:1rem 2rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:1rem; transition:all 0.3s; border:2px solid var(--gold); }
+.btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,184,150,0.3); }
+.btn-secondary { display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:var(--gold); padding:1rem 2rem; border-radius:50px; text-decoration:none; font-weight:600; font-size:1rem; border:2px solid var(--gold); transition:all 0.3s; }
+.btn-secondary:hover { background:rgba(201,184,150,0.1); transform:translateY(-2px); }
+.trust-banner { background:rgba(201,184,150,0.1); border:1px solid rgba(201,184,150,0.2); border-radius:12px; padding:1rem 1.5rem; display:flex; align-items:center; gap:1rem; max-width:520px; }
+.trust-banner svg { width:28px; height:28px; color:var(--gold); flex-shrink:0; }
+.trust-banner p { color:rgba(255,255,255,0.85); font-size:0.9rem; line-height:1.5; }
+.trust-banner strong { color:var(--gold); }
+.hero-visual { position:relative; }
+.video-container { position:relative; border-radius:20px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.3); border:1px solid rgba(201,184,150,0.2); }
+.video-container video { width:100%; display:block; aspect-ratio:16/9; object-fit:cover; }
+.video-overlay { position:absolute; bottom:0; left:0; right:0; padding:2rem; background:linear-gradient(transparent,rgba(26,42,74,0.9)); }
+.video-stats { display:flex; gap:2rem; }
+.video-stat { text-align:center; }
+.video-stat-number { font-size:1.8rem; font-weight:800; color:var(--gold); line-height:1; }
+.video-stat-label { font-size:0.75rem; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.05em; margin-top:0.25rem; }
+.floating-card { position:absolute; background:var(--white); border-radius:16px; padding:1rem 1.25rem; box-shadow:0 10px 40px rgba(0,0,0,0.15); display:flex; align-items:center; gap:0.75rem; animation:float 3s ease-in-out infinite; }
+.floating-card.card-1 { top:-100px; right:20px; animation-delay:0s; }
+.floating-card.card-2 { bottom:-100px; right:20px; animation-delay:1.5s; }
+@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+.floating-card-icon { width:40px; height:40px; background:var(--gold-light); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--navy); }
+.floating-card-text { font-size:0.8rem; font-weight:600; color:var(--navy); }
+.floating-card-sub { font-size:0.7rem; color:var(--gray); }
+section { padding:5rem 0; }
+.container { max-width:1200px; margin:0 auto; padding:0 1.5rem; }
+.section-header { text-align:center; max-width:700px; margin:0 auto 3rem; }
+.section-label { display:inline-block; color:var(--gold-dark); font-weight:600; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.75rem; }
+.section-title { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; color:var(--navy); margin-bottom:1rem; line-height:1.2; }
+.section-subtitle { color:var(--gray); font-size:1.1rem; }
+.about { background:var(--off-white); }
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.about-image { position:relative; }
+.about-image img { width:100%; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,0.1); object-fit:cover; aspect-ratio:3/4; }
+.experience-badge { position:absolute; bottom:-20px; right:-20px; background:var(--navy); color:var(--gold); padding:1.5rem 2rem; border-radius:16px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.2); }
+.experience-badge .number { font-size:2.5rem; font-weight:800; line-height:1; }
+.experience-badge .text { font-size:0.85rem; opacity:0.8; margin-top:0.25rem; }
+.about-content h2 { font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--navy); margin-bottom:1rem; }
+.about-content p { color:var(--gray); margin-bottom:1.5rem; font-size:1.05rem; }
+.features-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; }
+.feature-item { display:flex; gap:0.75rem; align-items:flex-start; }
+.feature-icon { width:44px; height:44px; background:var(--gold-light); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--navy); flex-shrink:0; }
+.feature-text h4 { font-size:0.95rem; font-weight:700; color:var(--navy); margin-bottom:0.25rem; }
+.feature-text p { font-size:0.85rem; color:var(--gray); margin:0; }
+.courses { background:var(--white); }
+.course-path { display:flex; justify-content:center; gap:1rem; margin-bottom:3rem; flex-wrap:wrap; }
+.path-badge { display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1.25rem; border-radius:50px; font-size:0.85rem; font-weight:600; }
+.path-badge.start { background:var(--green); color:white; }
+.path-badge.advanced { background:var(--navy); color:var(--gold); }
+.path-badge.expert { background:var(--gold); color:var(--navy); }
+.courses-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.course-card { background:var(--white); border:1px solid var(--gray-light); border-radius:20px; padding:2rem; transition:all 0.3s; position:relative; overflow:hidden; }
+.course-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,0.1); border-color:var(--gold); }
+.course-card.popular::before { content:'Mas popular'; position:absolute; top:1rem; right:-2.5rem; background:var(--gold); color:var(--navy); padding:0.25rem 3rem; font-size:0.7rem; font-weight:700; text-transform:uppercase; transform:rotate(45deg); }
+.course-number { width:48px; height:48px; background:var(--gold-light); border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1.2rem; color:var(--navy); margin-bottom:1.25rem; }
+.course-card h3 { font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem; }
+.course-card .subtitle { font-size:0.9rem; color:var(--gray); margin-bottom:1rem; }
+.course-price { font-size:1.8rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; }
+.course-price span { font-size:0.9rem; font-weight:400; color:var(--gray); }
+.course-target { background:var(--off-white); padding:0.75rem 1rem; border-radius:8px; font-size:0.8rem; color:var(--gray); margin-bottom:1.25rem; }
+.course-target strong { color:var(--navy); }
+.course-modules { list-style:none; margin-bottom:1.5rem; }
+.course-modules li { display:flex; gap:0.75rem; padding:0.6rem 0; border-bottom:1px solid var(--gray-light); font-size:0.9rem; }
+.course-modules li:last-child { border-bottom:none; }
+.module-num { width:24px; height:24px; background:var(--navy); color:var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; flex-shrink:0; }
+.course-result { background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); color:var(--white); padding:1rem; border-radius:12px; font-size:0.85rem; margin-bottom:1.25rem; }
+.course-result strong { color:var(--gold); }
+.course-extras { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem; }
+.course-extra { background:var(--gold-light); color:var(--navy); padding:0.3rem 0.75rem; border-radius:50px; font-size:0.75rem; font-weight:600; }
+.course-cta { display:block; text-align:center; background:var(--navy); color:var(--gold); padding:0.875rem; border-radius:12px; text-decoration:none; font-weight:700; transition:all 0.3s; }
+.course-cta:hover { background:var(--gold); color:var(--navy); }
+.methodology { background:var(--navy); color:var(--white); position:relative; overflow:hidden; }
+.methodology::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9b896' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events:none; }
+.methodology .section-label { color:var(--gold); }
+.methodology .section-title { color:var(--white); }
+.methodology .section-subtitle { color:rgba(255,255,255,0.6); }
+.method-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
+.method-card { text-align:center; padding:2rem 1.5rem; background:rgba(255,255,255,0.05); border:1px solid rgba(201,184,150,0.15); border-radius:16px; transition:all 0.3s; }
+.method-card:hover { background:rgba(255,255,255,0.08); transform:translateY(-5px); }
+.method-icon { width:64px; height:64px; background:rgba(201,184,150,0.15); border-radius:16px; display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; color:var(--gold); }
+.method-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:0.5rem; color:var(--white); }
+.method-card p { font-size:0.85rem; color:rgba(255,255,255,0.6); }
+.method-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:3rem; text-align:center; }
+.method-stat-number { font-size:3rem; font-weight:800; color:var(--gold); line-height:1; }
+.method-stat-label { font-size:0.9rem; color:rgba(255,255,255,0.6); margin-top:0.5rem; }
+.why-afine { background:var(--off-white); }
+.why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; }
+.why-card { background:var(--white); border-radius:16px; padding:2rem; display:flex; gap:1.25rem; align-items:flex-start; box-shadow:0 4px 20px rgba(0,0,0,0.05); transition:all 0.3s; }
+.why-card:hover { transform:translateY(-3px); box-shadow:0 10px 40px rgba(0,0,0,0.1); }
+.why-icon { width:56px; height:56px; background:var(--gold-light); border-radius:14px; display:flex; align-items:center; justify-content:center; color:var(--navy); flex-shrink:0; }
+.why-text h3 { font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:0.4rem; }
+.why-text p { font-size:0.9rem; color:var(--gray); }
+.trust-section { background:linear-gradient(135deg,var(--gold-light) 0%,var(--off-white) 100%); padding:4rem 0; }
+.trust-box { background:var(--white); border-radius:24px; padding:3rem; text-align:center; max-width:800px; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.08); border:2px solid var(--gold); position:relative; }
+.trust-box::before { content:''; position:absolute; top:-2px; left:50%; transform:translateX(-50%); width:100px; height:4px; background:var(--gold); border-radius:2px; }
+.trust-icon { width:72px; height:72px; background:var(--gold-light); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; color:var(--navy); }
+.trust-box h2 { font-family:'Playfair Display',serif; font-size:2rem; color:var(--navy); margin-bottom:1rem; }
+.trust-box p { font-size:1.1rem; color:var(--gray); max-width:600px; margin:0 auto 1.5rem; }
+.trust-box .highlight { color:var(--navy); font-weight:700; }
+.trust-features { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; }
+.trust-feature { display:flex; align-items:center; gap:0.5rem; font-size:0.9rem; color:var(--navy); font-weight:600; }
+.trust-feature svg { color:var(--green); }
+.cta-section { background:var(--navy); color:var(--white); text-align:center; position:relative; overflow:hidden; }
+.cta-section::before { content:''; position:absolute; top:-50%; left:-20%; width:60%; height:200%; background:radial-gradient(ellipse,rgba(201,184,150,0.06) 0%,transparent 70%); pointer-events:none; }
+.cta-section .container { position:relative; z-index:1; }
+.cta-section h2 { font-family:'Playfair Display',serif; font-size:2.5rem; margin-bottom:1rem; }
+.cta-section h2 span { color:var(--gold); }
+.cta-section .subtitle { font-size:1.1rem; color:rgba(255,255,255,0.7); margin-bottom:2rem; }
+.cta-price { font-size:3rem; font-weight:800; color:var(--gold); margin-bottom:0.5rem; }
+.cta-price-detail { font-size:1rem; color:rgba(255,255,255,0.6); margin-bottom:2rem; }
+.urgency-banner { background:rgba(201,184,150,0.15); border:1px solid rgba(201,184,150,0.3); border-radius:12px; padding:1rem 2rem; display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:2rem; }
+.urgency-banner svg { color:var(--gold); animation:pulse 2s infinite; }
+.urgency-banner span { color:var(--gold); font-weight:600; }
+.cta-buttons { display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; }
+.btn-whatsapp { display:inline-flex; align-items:center; gap:0.5rem; background:#25D366; color:white; padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:700; font-size:1.1rem; transition:all 0.3s; }
+.btn-whatsapp:hover { background:#128C7E; transform:translateY(-2px); box-shadow:0 10px 30px rgba(37,211,102,0.3); }
+.btn-email { display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:var(--gold); padding:1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:600; border:2px solid var(--gold); transition:all 0.3s; }
+.btn-email:hover { background:rgba(201,184,150,0.1); }
+.contact { background:var(--white); }
+.contact-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
+.contact-card { background:var(--off-white); border-radius:16px; padding:2rem; text-align:center; transition:all 0.3s; }
+.contact-card:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(0,0,0,0.08); }
+.contact-icon { width:56px; height:56px; background:var(--gold-light); border-radius:14px; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; color:var(--navy); }
+.contact-card h3 { font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem; }
+.contact-card p, .contact-card a { font-size:0.95rem; color:var(--gray); text-decoration:none; transition:color 0.3s; }
+.contact-card a:hover { color:var(--navy); }
+.footer { background:var(--navy); color:rgba(255,255,255,0.6); padding:3rem 0 2rem; text-align:center; }
+.footer-logo { margin-bottom:1rem; }
+.footer-logo img { height:40px; opacity:0.8; }
+.footer p { font-size:0.9rem; }
+.footer a { color:var(--gold); text-decoration:none; }
+@media (max-width:1024px) {
+.hero-container { grid-template-columns:1fr; gap:3rem; }
+.hero h1 { font-size:2.5rem; }
+.hero-logo-big img { height:120px; }
+.hero-visual { order:-1; }
+.courses-grid { grid-template-columns:1fr; }
+.method-grid { grid-template-columns:repeat(2,1fr); }
+}
+    .whatsapp-float {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 62px;
+  height: 62px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background: #128C7E;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-float svg {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+@media (max-width:768px) {
+.nav-links { display:none; position:absolute; top:100%; left:0; right:0; background:var(--navy); flex-direction:column; padding:1rem; gap:1rem; }
+.nav-links.active { display:flex; }
+.nav-cta { display:none; }
+.mobile-menu-btn { display:block; }
+.hero { padding-top:70px; }
+.hero h1 { font-size:2rem; }
+.hero-logo-big img { height:90px; }
+.about-grid { grid-template-columns:1fr; }
+.features-grid { grid-template-columns:1fr; }
+.why-grid { grid-template-columns:1fr; }
+.method-grid { grid-template-columns:1fr; }
+.method-stats { grid-template-columns:1fr; }
+.contact-grid { grid-template-columns:1fr; }
+.trust-box { padding:2rem 1.5rem; }
+.section-title { font-size:1.8rem; }
+.floating-card { display:none; }
+.experience-badge { right:10px; bottom:10px; padding:1rem 1.25rem; }
+.experience-badge .number { font-size:2rem; }
+}
+.fade-in { opacity:0; transform:translateY(30px); transition:all 0.6s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+.video-container.sound-active{box-shadow:0 0 30px rgba(201,184,150,0.4);border-color:rgba(201,184,150,0.5)}.video-container{transition:box-shadow .3s,border-color .3s}
+
+/* Testimonials */
+.testimonials { background: var(--off-white); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.testimonial-card { background: var(--white); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; }
+.testimonial-card::before { content: '"'; position: absolute; top: 1rem; right: 1.5rem; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--gold-light); line-height: 1; }
+.testimonial-stars { color: var(--gold); margin-bottom: 1rem; display: flex; gap: 0.15rem; }
+.testimonial-text { font-size: 0.95rem; color: var(--gray); margin-bottom: 1.5rem; line-height: 1.7; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+.testimonial-avatar { width: 44px; height: 44px; background: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--navy); font-weight: 700; font-size: 0.9rem; }
+.testimonial-name { font-weight: 700; color: var(--navy); font-size: 0.9rem; }
+.testimonial-role { font-size: 0.8rem; color: var(--gray); }
+
+/* Urgency banner */
+.urgency-section { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 1.5rem 0; text-align: center; position: relative; overflow: hidden; }
+.urgency-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.urgency-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.urgency-badge { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; animation: pulse 2s infinite; }
+.urgency-text { font-size: 1.1rem; font-weight: 600; }
+.urgency-text strong { color: #fef3c7; }
+.urgency-cta { background: white; color: #dc2626; padding: 0.6rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s; }
+.urgency-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+/* Sticky CTA bar */
+.sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--navy); padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 999; transform: translateY(100%); transition: transform 0.3s ease; box-shadow: 0 -4px 20px rgba(0,0,0,0.2); }
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-text { color: var(--gold); font-size: 0.9rem; font-weight: 600; }
+.sticky-cta-btn { background: var(--gold); color: var(--navy); padding: 0.5rem 1.25rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: all 0.3s; }
+.sticky-cta-btn:hover { background: var(--gold-light); }
+
+/* Instructor bio section */
+.instructor { background: var(--white); position: relative; overflow: hidden; }
+.instructor::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, rgba(201,184,150,0.05) 0%, transparent 70%); pointer-events: none; }
+.instructor-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+.instructor-image { position: relative; }
+.instructor-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 3/4; }
+.instructor-badge { position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: var(--navy); color: var(--gold); padding: 1rem 2rem; border-radius: 50px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); white-space: nowrap; font-weight: 700; font-size: 0.9rem; }
+.instructor-content h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--navy); margin-bottom: 0.5rem; }
+.instructor-subtitle { color: var(--gold-dark); font-weight: 600; font-size: 1rem; margin-bottom: 1.5rem; display: block; }
+.instructor-bio { color: var(--gray); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
+.instructor-bio p { margin-bottom: 1rem; }
+.instructor-timeline { list-style: none; }
+.instructor-timeline li { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--gray-light); align-items: flex-start; }
+.instructor-timeline li:last-child { border-bottom: none; }
+.timeline-year { background: var(--gold-light); color: var(--navy); padding: 0.35rem 0.75rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; white-space: nowrap; min-width: 90px; text-align: center; }
+.timeline-text { color: var(--text); font-size: 0.95rem; line-height: 1.5; }
+.timeline-text strong { color: var(--navy); }
+.instructor-cert { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--gold); padding: 0.75rem 1.25rem; border-radius: 12px; font-size: 0.9rem; font-weight: 600; margin-top: 1rem; }
+.instructor-cert svg { width: 20px; height: 20px; }
+
+/* Responsive instructor */
+@media (max-width: 1024px) {
+  .instructor-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .instructor-image { max-width: 400px; margin: 0 auto; }
+  .instructor-badge { font-size: 0.8rem; padding: 0.75rem 1.5rem; }
+}
+@media (max-width: 768px) {
+  .instructor-timeline li { flex-direction: column; gap: 0.5rem; }
+  .timeline-year { align-self: flex-start; }
+}
+
+/* Responsive testimonials */
+@media (max-width: 1024px) {
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+
+/* Responsive groups banner - fixes mobile layout */
+@media (max-width: 768px) {
+  .groups-banner > div > div[style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .groups-banner {
+    padding: 1.5rem !important;
+  }
+  .groups-banner h3 {
+    font-size: 1.4rem !important;
+  }
+  .sticky-cta { flex-direction: column; gap: 0.5rem; padding: 0.75rem; }
+  .sticky-cta-text { font-size: 0.8rem; text-align: center; }
+}
+</style>
+<base target="_blank">
+<base target="_blank">
+<base target="_blank">
+<base target="_blank">
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+<div class="nav-container">
+<a href="#" class="nav-logo"><img src="logo Afine.png" alt="AFINE Logo"></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#grupos-abiertos">Grupos abiertos</a></li>
+<li><a href="#cursos-grid">Cursos</a></li>
+<li><a href="#semblanza">Semblanza</a></li>
+<li><a href="#metodologia">Metodologia</a></li>
+<li><a href="#porque-afine">Por que AFINE?</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+<a href="https://wa.me/529994530002" class="nav-cta" target="_blank">Escribir por WhatsApp</a>
+<button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-container">
+<div class="hero-content">
+<div class="hero-badge"><span class="dot"></span>Inscripciones abiertas - Merida, Yucatan</div>
+<h1>Aprende a conocer el mundo de las finanzas de manera <span>fácil y práctica</span></h1>
+<p class="hero-subtitle">Cursos prácticos de finanzas personales e inversión, impartidos por un exdirector bancario. Sin teoría aburrida. Solo lo que necesitas para tomar mejores decisiones con tu dinero.</p>
+<div class="hero-meta">
+<div class="hero-meta-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>Máximo 10 personas</div>
+<div class="hero-meta-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>5 sesiones de 2 horas</div>
+<div class="hero-meta-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>$2,500 MXN por curso</div>
+</div>
+<div class="hero-cta-group">
+<a href="https://wa.me/529994530002" class="btn-primary" target="_blank"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Reservar mi lugar</a>
+<a href="#cursos" class="btn-secondary">Ver cursos disponibles</a>
+</div>
+<div class="trust-banner"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg><p><strong>Primera clase sin compromiso.</strong> No pagues nada antes de convencerte. Ven, prueba nuestra metodología y decide con tranquilidad. Queremos que tú mismo te convenzas.</p></div>
+</div>
+<div class="hero-visual">
+<div class="video-container">
+<video id="heroVideo" autoplay loop playsinline poster="logo Afine.png"><source src="PresentacionAfine.mp4" type="video/mp4"></video>
+<div class="video-controls">
+<button id="muteBtn" class="video-control-btn" title="Activar sonido">
+<svg id="muteIcon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path></svg>
+<svg id="soundIcon" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+</button>
+</div>
+
+<div class="floating-card card-1"><div class="floating-card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><div class="floating-card-text">$2,500 MXN</div><div class="floating-card-sub">Por curso completo</div></div></div>
+<div class="floating-card card-2"><div class="floating-card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><div class="floating-card-text">1a clase gratis</div><div class="floating-card-sub">Sin compromiso</div></div></div>
+</div>
+</div>
+</section>
+
+<div class="urgency-section">
+<div class="container">
+<div class="urgency-content">
+<div class="urgency-badge">⚡ Cupo limitado</div>
+<div class="urgency-text">Solo <strong>10 plazas</strong> por grupo — Iniciamos <strong>20 de julio</strong></div>
+<a href="https://calendly.com/afinemerida/curso-finanzas" class="urgency-cta" target="_blank">Reservar mi lugar ahora</a>
+</div>
+</div>
+</div>
+
+<section class="about" id="conoce-afine">
+<div class="container">
+<div class="about-grid">
+<div class="about-image">
+<img src="datos-financieros.png" alt="Pantalla con gráficas de velas japonesas, análisis técnico y datos del mercado bursátil">
+<div class="experience-badge"><div class="number">35</div><div class="text">años de experiencia<br>en banca a nivel dirección</div></div>
+</div>
+<div class="about-content">
+<span class="section-label">Conoce AFINE</span>
+<h2>Un enfoque diferente centrado en lo que realmente necesitas saber</h2>
+<p>¿Te suena familiar? Cursos de finanzas llenos de teoría innecesaria, análisis de estados financieros que nunca aplicarás, y metodologías obsoletas que no funcionan en el mundo real.</p>
+<p><strong>Somos diferentes.</strong> Nuestro instructor tiene 35 años de experiencia en banca (nivel dirección), y nuestro enfoque es 100% práctico: teoría básica + aplicación real + casos del día a día.</p>
+<div class="features-grid">
+<div class="feature-item"><div class="feature-icon"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div><div class="feature-text"><h4>Temas Actuales</h4><p>Contenido actualizado al mercado mexicano, no teorías obsoletas.</p></div></div>
+<div class="feature-item"><div class="feature-icon"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div><div class="feature-text"><h4>Expertos del Sector</h4><p>Bancos, financieras e inversionistas reales compartiendo su experiencia.</p></div></div>
+<div class="feature-item"><div class="feature-icon"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div><div class="feature-text"><h4>Proteccion Total</h4><p>Aprende a detectar fraudes financieros antes de que sea tarde.</p></div></div>
+<div class="feature-item"><div class="feature-icon"><svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div><div class="feature-text"><h4>IA como Aliada</h4><p>La IA como herramienta de apoyo, no como sustituto de tus decisiones.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="instructor" id="semblanza">
+<div class="container">
+<div class="section-header">
+<span class="section-label">Conoce a tu instructor</span>
+<h2 class="section-title">Semblanza del Instructor</h2>
+<p class="section-subtitle">Más de tres décadas de experiencia real en el sector financiero</p>
+</div>
+<div class="instructor-grid">
+<div class="instructor-image">
+<img src="datos-financieros.png" alt="Instructor AFINE - 35 años de experiencia bancaria">
+<div class="instructor-badge">35 años de trayectoria</div>
+</div>
+<div class="instructor-content">
+<h2>De la dirección bancaria a la enseñanza práctica</h2>
+<span class="instructor-subtitle">Exdirector bancario con experiencia en las principales instituciones financieras de México</span>
+<div class="instructor-bio">
+<p>Su carrera en el sector bancario comenzó en <strong>1990 en Banamex</strong>, donde desarrolló sólidas bases en sistemas y banca empresarial. Durante <strong>12 años en Banco Bital-HSBC (1995-2007)</strong>, ocupó subdirecciones clave en riesgo crediticio y banca empresarial, consolidando su expertise en análisis financiero y negociación.</p>
+<p>Posteriormente, durante <strong>18 años en Scotiabank (2007-2025)</strong>, dirigió la banca empresarial para la región sureste de México desde Mérida, abarcando el sur y sureste del país. Esta trayectoria le permitió dominar los instrumentos de financiamiento, la estructuración de créditos complejos y la negociación a nivel directivo.</p>
+<p>A lo largo de su carrera ha sido invitado a <strong>impartir pláticas en universidades locales</strong>, compartiendo su conocimiento con las nuevas generaciones. Además, cuenta con <strong>certificación Moody's en riesgo crediticio</strong>, respaldando su especialización técnica.</p>
+<p>Hoy canaliza toda esa experiencia en <strong>AFINE</strong>, enseñando lo que realmente funciona en el mundo financiero: sin teoría innecesaria, sin jerga intimidante. Solo conocimiento probado que puedes aplicar desde el primer día.</p>
+</div>
+<ul class="instructor-timeline">
+<li>
+<div class="timeline-year">1990</div>
+<div class="timeline-text">Inicia en <strong>Banamex</strong> — áreas de sistemas y banca empresarial</div>
+</li>
+<li>
+<div class="timeline-year">1995-2007</div>
+<div class="timeline-text">Subdirecciones de <strong>riesgo crediticio</strong> y banca empresarial en <strong>Banco Bital-HSBC</strong></div>
+</li>
+<li>
+<div class="timeline-year">2007-2025</div>
+<div class="timeline-text">Dirección regional sureste de <strong>banca empresarial en Scotiabank</strong></div>
+</li>
+</ul>
+<div class="instructor-cert">
+<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+Certificación Moody's en riesgo crediticio
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="courses" id="cursos">
+<div class="container">
+<div class="section-header">
+<span class="section-label">Nuestros Cursos</span>
+<h2 class="section-title">Elige el programa que mejor se adapte a tus necesidades</h2>
+<p class="section-subtitle">Tres cursos especializados diseñados para llevarte del conocimiento básico al dominio avanzado</p>
+</div>
+
+<div id="grupos-abiertos" class="groups-banner" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); border-radius: 20px; padding: 2.5rem; margin-bottom: 3rem; color: white; position: relative; overflow: hidden;">
+<div style="position: absolute; top: -50%; right: -20%; width: 60%; height: 200%; background: radial-gradient(ellipse, rgba(201,184,150,0.1) 0%, transparent 70%); pointer-events: none;"></div>
+<div style="position: relative; z-index: 1;">
+<div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(201,184,150,0.2); border: 1px solid rgba(201,184,150,0.3); color: var(--gold); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem;">
+<span style="width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite;"></span>
+Grupos abiertos — Iniciamos 20 de julio 2026
+</div>
+<h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; color: white;">Horarios disponibles</h3>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(201,184,150,0.2); border-radius: 16px; padding: 1.5rem;">
+<div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+<div style="width: 44px; height: 44px; background: var(--gold-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy);">
+<svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+</div>
+<div>
+<div style="font-weight: 700; font-size: 1.1rem; color: white;">Finanzas Básicas</div>
+<div style="font-size: 0.85rem; color: var(--gold);">Todos los lunes (elige uno de los horarios)</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+<div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+<svg width="16" height="16" fill="none" stroke="var(--gold)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+9:00 am — 11:00 am
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+<svg width="16" height="16" fill="none" stroke="var(--gold)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+5:00 pm — 7:00 pm
+</div>
+</div>
+<div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: rgba(255,255,255,0.6);">5 sesiones de 2 horas cada una</div>
+</div>
+<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(201,184,150,0.2); border-radius: 16px; padding: 1.5rem;">
+<div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+<div style="width: 44px; height: 44px; background: var(--gold-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy);">
+<svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+</div>
+<div>
+<div style="font-weight: 700; font-size: 1.1rem; color: white;">Mercado Bursátil</div>
+<div style="font-size: 0.85rem; color: var(--gold);">Todos los miércoles (elige uno de los horarios)</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+<div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+<svg width="16" height="16" fill="none" stroke="var(--gold)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+9:00 am — 11:00 am
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+<svg width="16" height="16" fill="none" stroke="var(--gold)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+5:00 pm — 7:00 pm
+</div>
+</div>
+<div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: rgba(255,255,255,0.6);">5 sesiones de 2 horas cada una</div>
+</div>
+</div>
+<div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(201,184,150,0.25); border-radius: 12px; padding: 1rem 1.5rem; margin-top: 1.5rem; text-align: center;">
+<div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--gold); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem;">
+<svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+Cursos personalizados disponibles
+</div>
+<p style="color: rgba(255,255,255,0.75); font-size: 0.85rem; margin: 0;">En grupos mínimo de <strong style="color: var(--gold);">5 personas</strong> podemos dar cursos <em>ad hoc</em> al día y horario que requieran</p>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap;">
+<div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+<svg width="18" height="18" fill="none" stroke="var(--gold)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+Fraccionamiento Campestre, Mérida
+</div>
+<div style="display: flex; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">
+<svg width="18" height="18" fill="none" stroke="var(--gold)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+Máximo 10 personas por grupo
+</div>
+</div>
+<div style="text-align: center; margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+<a href="https://wa.me/529994530002?text=Hola,%20me%20interesa%20inscribirme%20en%20los%20grupos%20de%20julio%202026" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--navy); padding: 0.875rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s;" onmouseover="this.style.background='var(--gold-light)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--gold)';this.style.transform='translateY(0)'">
+<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+Contáctanos por WhatsApp
+</a>
+<a href="https://calendly.com/afinemerida/curso-finanzas" style="display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--gold); padding: 0.875rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; border: 2px solid var(--gold); transition: all 0.3s;" onmouseover="this.style.background='rgba(201,184,150,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent';this.style.transform='translateY(0)'" target="_blank">
+<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+Agendar en Calendly
+</a>
+</div>
+</div>
+</div>
+
+<div id="cursos-grid" class="courses-grid">
+<div class="course-card popular fade-in">
+<div class="course-number">01</div>
+<h3>Finanzas Básicas</h3>
+<p class="subtitle">Niveles I, II y III</p>
+<div class="course-price">$2,500 <span>MXN por módulo</span></div>
+<div class="course-target"><strong>Dirigido a:</strong> Cualquier persona, indistintamente de su nivel de conocimiento previo. No se requiere experiencia financiera.</div>
+<div class="course-target" style="background:#e0f2fe;color:#075985;"><strong>Objetivo:</strong> Al terminar, contarás con un conocimiento básico y teórico sólido de finanzas personales para tomar mejores decisiones con tu dinero.</div>
+<ul class="course-modules">
+<li><span class="module-num">1</span><div><strong>Nivel I - Fundamentos de Inversión</strong><br>Renta fija vs variable, perfiles de inversor, productos bancarios básicos</div></li>
+<li><span class="module-num">2</span><div><strong>Nivel II - Inversiones en Bolsa</strong><br>Acciones, ETFs, análisis fundamental, evitando fraudes</div></li>
+<li><span class="module-num">3</span><div><strong>Nivel III - Financiamiento Personal</strong><br>Créditos, préstamos, negociación bancaria, detección de trampas</div></li>
+</ul>
+<div class="course-result"><strong>Resultado:</strong> Al terminar, sabrás elegir la mejor opción de inversion según tu perfil Y detectar empresas financieras fraudulentas.</div>
+<div class="course-extras"><span class="course-extra">Material práctico</span><span class="course-extra">Casos reales</span><span class="course-extra">Guest speakers</span></div>
+<a href="https://wa.me/529994530002?text=Hola,%20me%20interesa%20el%20curso%20de%20Finanzas%20Básicas" class="course-cta" target="_blank">Solicitar información</a>
+</div>
+<div class="course-card fade-in">
+<div class="course-number">02</div>
+<h3>Financiamiento para Emprendedores</h3>
+<p class="subtitle">Domina las opciones de financiamiento</p>
+<div class="course-price">$2,500 <span>MXN</span></div>
+<div class="course-target"><strong>Dirigido a:</strong> Emprendedores, empresarios PyMEs, tesoreros de empresas medianas</div>
+<ul class="course-modules">
+<li><span class="module-num">1</span><div><strong>Módulo 1 - Conoce tus opciones</strong><br>Créditos bancarios, financieras alternativas, coinversionistas, programas gubernamentales</div></li>
+<li><span class="module-num">2</span><div><strong>Módulo 2 - Negocia como experto</strong><br>Cómo presentar tu proyecto, errores comunes, tips de negociación, lectura de cláusulas</div></li>
+</ul>
+<div class="course-result"><strong>Resultado:</strong> Tomarás mejores decisiones de financiamiento para tu negocio.</div>
+<div class="course-extras"><span class="course-extra">Asesoría personalizada</span><span class="course-extra">Plantillas de negocio</span><span class="course-extra">Simulacros</span></div>
+<a href="https://wa.me/529994530002?text=Hola,%20me%20interesa%20el%20curso%20de%20Financiamiento%20para%20Emprendedores" class="course-cta" target="_blank">Solicitar información</a>
+</div>
+<div class="course-card fade-in">
+<div class="course-number">03</div>
+<h3>Introducción al Mercado Bursátil</h3>
+<p class="subtitle">Creando modelos de IA para análisis fundamental y técnico</p>
+<div class="course-price">$2,500 <span>MXN</span></div>
+<div class="course-target"><strong>Dirigido a:</strong> Profesionistas, alumnos de finanzas/banca y emprendedores con conocimientos básicos</div>
+<div class="course-target" style="background:#fef3c7;color:#92400e;"><strong>Prerrequisito:</strong> Haber completado Finanzas Básicas (Nivel I mínimo) o demostrar experiencia equivalente</div>
+<ul class="course-modules">
+<li><span class="module-num">1</span><div><strong>Análisis Fundamental</strong><br>Métricas clave (P/E, ROE), lectura de reportes, valoración de empresas</div></li>
+<li><span class="module-num">2</span><div><strong>Análisis Técnico</strong><br>Indicadores (RSI, MACD), patrones de velas, soportes y resistencias</div></li>
+<li><span class="module-num">3</span><div><strong>IA para minimizar riesgos</strong><br>Machine learning para finanzas, protocolos conservadores en IA</div></li>
+</ul>
+<div class="course-result"><strong>Resultado:</strong> Crearás un modelo de IA personalizado que minimice el riesgo en tus inversiones bursátiles.</div>
+<div class="course-extras"><span class="course-extra">Código Python</span><span class="course-extra">Bases de datos históricas</span><span class="course-extra">Plantillas de modelos</span></div>
+<a href="https://wa.me/529994530002?text=Hola,%20me%20interesa%20el%20curso%20de%20Introduccion%20al%20Mercado%20Bursátil" class="course-cta" target="_blank">Solicitar información</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="methodology" id="metodologia">
+<div class="container">
+<div class="section-header">
+<span class="section-label">Nuestra Metodología</span>
+<h2 class="section-title">¿Por qué tomar nuestros cursos?</h2>
+<p class="section-subtitle">Una experiencia de aprendizaje diseñada para que apliques desde el primer día</p>
+</div>
+<div class="method-grid">
+<div class="method-card fade-in"><div class="method-icon"><svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div><h3>35 Años de Experiencia</h3><p>Instructor con experiencia en banca a nivel dirección</p></div>
+<div class="method-card fade-in"><div class="method-icon"><svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div><h3>100% Práctico</h3><p>Cursos realistas y adaptados a la actualidad del mercado mexicano</p></div>
+<div class="method-card fade-in"><div class="method-icon"><svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div><h3>IA como Herramienta</h3><p>La decisión es nuestra, la IA nos apoya en el análisis</p></div>
+<div class="method-card fade-in"><div class="method-icon"><svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div><h3>Grupos Pequeños</h3><p>Máximo 10 personas por curso para atención personalizada</p></div>
+</div>
+<div class="method-stats">
+<div class="fade-in"><div class="method-stat-number">5</div><div class="method-stat-label">Sesiones presenciales</div></div>
+<div class="fade-in"><div class="method-stat-number">10</div><div class="method-stat-label">Horas efectivas</div></div>
+<div class="fade-in"><div class="method-stat-number">2</div><div class="method-stat-label">Horarios disponibles</div></div>
+</div>
+</div>
+</section>
+
+<section class="why-afine" id="porque-afine">
+<div class="container">
+<div class="section-header">
+<span class="section-label">¿Por qué elegir AFINE?</span>
+<h2 class="section-title">Razones simples y poderosas para confiar en nosotros</h2>
+</div>
+<div class="why-grid">
+<div class="why-card fade-in"><div class="why-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div><div class="why-text"><h3>Instructor con Trayectoria Real</h3><p>Dirigió banca empresarial en Scotiabank, HSBC y Banamex. Enseña lo que vivió, no lo que leyó.</p></div></div>
+<div class="why-card fade-in"><div class="why-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div><div class="why-text"><h3>Enfoque Mexicano, No Genérico</h3><p>Instrumentos, bancos y regulaciones del mercado local. Lo que necesitas saber para operar desde Mérida.</p></div></div>
+<div class="why-card fade-in"><div class="why-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div><div class="why-text"><h3>IA como Herramienta</h3><p>La decisión es nuestra, la IA nos apoya. Aprende a usar la inteligencia artificial sin depender ciegamente de ella.</p></div></div>
+<div class="why-card fade-in"><div class="why-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div><div class="why-text"><h3>Detección de Fraudes</h3><p>Aprende a identificar empresas fraudulentas antes de invertir. Protege tu dinero con conocimiento real.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<div class="section-header">
+<span class="section-label">Testimonios</span>
+<h2 class="section-title">Lo que dicen quienes ya tomaron el curso</h2>
+<p class="section-subtitle">Historias reales de personas que decidieron tomar control de sus finanzas</p>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card fade-in">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-text">"Por fin entiendo qué hace mi banco con mi dinero. El curso me abrió los ojos. Ya no me siento intimidado al hablar de inversiones."</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">MR</div>
+<div>
+<div class="testimonial-name">María R.</div>
+<div class="testimonial-role">Emprendedora, Mérida</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card fade-in">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-text">"Lo mejor es que no es teoría de libro. El instructor explica con ejemplos del día a día. Detecté una empresa fraudulenta que casi me engaña."</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">JL</div>
+<div>
+<div class="testimonial-name">José L.</div>
+<div class="testimonial-role">Ingeniero, 42 años</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card fade-in">
+<div class="testimonial-stars">★★★★★</div>
+<p class="testimonial-text">"Mi hijo me recomendó el curso. A mis 65 años pensé que era tarde, pero la metodología es tan clara que cualquiera puede entenderla."</p>
+<div class="testimonial-author">
+<div class="testimonial-avatar">GC</div>
+<div>
+<div class="testimonial-name">Guadalupe C.</div>
+<div class="testimonial-role">Jubilada, Mérida</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="trust-section">
+<div class="container">
+<div class="trust-box fade-in">
+<div class="trust-icon"><svg width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+<h2>Primera clase sin compromiso</h2>
+<p>No pagues ninguna inscripción. <span class="highlight">Acude a tu primera clase y si estás convencido y te gusta, te inscribes.</span> Queremos que tú mismo te convenzas de la calidad de nuestros cursos.</p>
+<div class="trust-features">
+<div class="trust-feature"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Sin pago anticipado</div>
+<div class="trust-feature"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Sin letra pequeña</div>
+<div class="trust-feature"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Sin presión</div>
+<div class="trust-feature"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Tu decides con información real</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<div class="container">
+<h2 class="fade-in">¿Listo para dominar <span>tus finanzas?</span></h2>
+<p class="subtitle fade-in">Costos accesibles para aprender de verdad</p>
+<div class="cta-price fade-in">$2,500 MXN</div>
+<p class="cta-price-detail fade-in">5 sesiones de 2 horas (10 horas efectivas), en dos horarios: matutino y vespertino</p>
+<div class="urgency-banner fade-in"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Cupo limitado a 10 personas por grupo</span></div>
+<div class="cta-buttons fade-in">
+<a href="https://wa.me/529994530002" class="btn-whatsapp" target="_blank"><svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>Contactar por WhatsApp</a>
+<a href="mailto:afinemerida@gmail.com" class="btn-email"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>Enviar correo</a>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contacto">
+<div class="container">
+<div class="section-header">
+<span class="section-label">Contáctanos</span>
+<h2 class="section-title">Estamos aquí para resolver todas tus dudas</h2>
+</div>
+<div class="contact-grid">
+<div class="contact-card fade-in">
+<div class="contact-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
+<h3>WhatsApp</h3>
+<a href="https://wa.me/529994530002" target="_blank">999 453 0002</a>
+<p style="font-size:0.8rem;margin-top:0.5rem;">Respuesta rápida garantizada</p>
+</div>
+<div class="contact-card fade-in">
+<div class="contact-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+<h3>Correo electrónico</h3>
+<a href="mailto:afinemerida@gmail.com">afinemerida@gmail.com</a>
+</div>
+<div class="contact-card fade-in">
+<div class="contact-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+<h3>Ubicación</h3>
+<p>Fraccionamiento Campestre</p>
+<p style="font-size:0.8rem;margin-top:0.5rem;">Mérida, Yucatán, México</p>
+</div>
+<div class="contact-card fade-in">
+<div class="contact-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round"></line></svg></div>
+<h3>Instagram</h3>
+<a href="https://instagram.com/afinemid" target="_blank">@afinemid</a>
+<p style="font-size:0.8rem;margin-top:0.5rem;">Síguenos para más contenido</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<div class="footer-logo"><img src="logo Afine.png" alt="AFINE Logo"></div>
+<p>AFINE - Finanzas reales para resultados reales</p>
+<p style="margin-top:0.5rem;font-size:0.8rem;">Mérida, Yucatán, México | <a href="https://wa.me/529994530002" target="_blank">999 453 0002</a> | <a href="mailto:afinemerida@gmail.com">afinemerida@gmail.com</a></p>
+<p style="margin-top:1rem;font-size:0.75rem;opacity:0.6;"> 2026 AFINE. Todos los derechos reservados.</p>
+</div>
+</footer>
+
+<script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{if(window.scrollY>50){navbar.classList.add('scrolled');}else{navbar.classList.remove('scrolled');}});
+const mobileMenuBtn=document.getElementById('mobileMenuBtn');
+const navLinks=document.getElementById('navLinks');
+mobileMenuBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');});
+const fadeElements=document.querySelectorAll('.fade-in');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.1});
+fadeElements.forEach(el=>observer.observe(el));
+
+// Video control - funciona en desktop y móvil
+const heroVideo=document.getElementById('heroVideo');
+const muteBtn=document.getElementById('muteBtn');
+const muteIcon=document.getElementById('muteIcon');
+const soundIcon=document.getElementById('soundIcon');
+const videoContainer=document.querySelector('.video-container');
+
+function updateSoundIcon(isMuted){
+    if(!muteIcon||!soundIcon) return;
+    muteIcon.style.display=isMuted?'block':'none';
+    soundIcon.style.display=isMuted?'none':'block';
+}
+
+function enableSound(){
+    if(!heroVideo) return;
+    heroVideo.muted=false;
+    const playPromise=heroVideo.play();
+    if(playPromise!==undefined){
+        playPromise.then(()=>{
+            updateSoundIcon(false);
+            if(muteBtn) muteBtn.title='Silenciar';
+            videoContainer.classList.add('sound-active');
+        }).catch(()=>{
+            heroVideo.muted=true;
+            updateSoundIcon(true);
+        });
+    }
+}
+
+function disableSound(){
+    if(!heroVideo) return;
+    heroVideo.muted=true;
+    updateSoundIcon(true);
+    if(muteBtn) muteBtn.title='Activar sonido';
+    videoContainer.classList.remove('sound-active');
+}
+
+function toggleSound(e){
+    if(e) e.stopPropagation();
+    if(!heroVideo) return;
+    if(heroVideo.muted){
+        enableSound();
+    }else{
+        disableSound();
+    }
+}
+
+// Inicialmente muted por políticas del navegador
+if(heroVideo){
+    heroVideo.muted=true;
+    updateSoundIcon(true);
+}
+
+// Desktop: hover para activar/desactivar
+if(videoContainer&&heroVideo){
+    videoContainer.addEventListener('mouseenter',enableSound);
+    videoContainer.addEventListener('mouseleave',disableSound);
+}
+
+// Todos los dispositivos: click/tap en el botón para toggle
+if(muteBtn&&heroVideo){
+    muteBtn.addEventListener('click',toggleSound);
+    // Soporte táctil explícito para móvil
+    muteBtn.addEventListener('touchstart',function(e){
+        e.preventDefault();
+        toggleSound(e);
+    },{passive:false});
+}
+
+// También permitir tap en el video para toggle (más intuitivo en móvil)
+if(videoContainer&&heroVideo){
+    videoContainer.addEventListener('click',function(e){
+        if(e.target===muteBtn||e.target.closest('#muteBtn')) return;
+        toggleSound(e);
+    });
+    videoContainer.addEventListener('touchstart',function(e){
+        if(e.target===muteBtn||e.target.closest('#muteBtn')) return;
+        toggleSound(e);
+    },{passive:false});
+}
+
+// Sticky CTA bar - aparece al hacer scroll
+const stickyCta = document.getElementById('stickyCta');
+if(stickyCta){
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 600){
+            stickyCta.classList.add('visible');
+        } else {
+            stickyCta.classList.remove('visible');
+        }
+    });
+}
+</script>
+    <div class="sticky-cta" id="stickyCta">
+<span class="sticky-cta-text">¿Listo para empezar? Próximo grupo: 20 de julio</span>
+<a href="https://calendly.com/afinemerida/curso-finanzas" class="sticky-cta-btn" target="_blank">Reservar ahora</a>
+</div>
+
+<a href="https://wa.me/529994530002" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+  <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+  </svg>
+</a>
+</body>
+</html>
