@@ -1,17 +1,5 @@
 [
   {
-    "id": "blog2",
-    "title": "MENSAJE DE PRUEBA",
-    "category": "Finanzas personales",
-    "date": "2026-06-23",
-    "author": "AFINE",
-    "excerpt": "prueba segunda",
-    "cover": "",
-    "content": "esta es la prueba segunda",
-    "status": "published",
-    "updatedAt": "2026-06-23T19:39:32.209Z"
-  },
-  {
     "id": "blog1",
     "title": "credito personal",
     "category": "Finanzas personales",
@@ -21,6 +9,6 @@
     "cover": "",
     "content": "sabias que....................................................................................",
     "status": "published",
-    "updatedAt": "2026-06-23T19:39:32.209Z"
+    "updatedAt": "2026-06-23T20:15:23.425Z"
   }
 ]
