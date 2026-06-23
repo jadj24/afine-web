@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "blog1",
+    "title": "TARJETA",
+    "category": "Finanzas personales",
+    "date": "2026-06-23",
+    "author": "AFINE",
+    "excerpt": "credito",
+    "cover": "",
+    "content": "sabes que.....",
+    "status": "published",
+    "updatedAt": "2026-06-23T20:19:46.243Z"
+  }
+]
