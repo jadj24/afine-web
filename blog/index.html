@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Blog AFINE | Finanzas prácticas</title>
-<meta name="description" content="Artículos prácticos de AFINE sobre finanzas personales, inversión, mercado bursátil e inteligencia artificial aplicada al dinero.">
+<title>Admin Blog AFINE</title>
+<meta name="robots" content="noindex,nofollow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +17,11 @@
   --navy-light: #243b66;
   --gold: #c9b896;
   --gold-light: #e8dcc8;
-  --gold-dark: #a8946e;
-  --white: #ffffff;
-  --off-white: #f8f6f3;
   --gray: #6b7280;
   --gray-light: #e5e7eb;
+  --off-white: #f8f6f3;
   --text: #1f2937;
+  --red: #991b1b;
 }
 
 * {
@@ -31,28 +30,17 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: Inter, sans-serif;
-  color: var(--text);
   background: var(--off-white);
+  color: var(--text);
   line-height: 1.6;
 }
 
-a {
-  color: inherit;
-}
-
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(26, 42, 74, 0.98);
-  padding: 0.7rem 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  background: var(--navy);
+  padding: 0.75rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
 }
 
 .nav-container {
@@ -60,143 +48,151 @@ a {
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 
 .nav-logo img {
-  height: 56px;
+  height: 54px;
   width: auto;
   display: block;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.25rem;
   list-style: none;
+  gap: 1rem;
   align-items: center;
 }
 
 .nav-links a {
   color: var(--gold-light);
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 700;
-  transition: color 0.25s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--white);
-}
-
-.nav-cta {
-  background: var(--gold);
-  color: var(--navy);
-  padding: 0.6rem 1.25rem;
-  border-radius: 999px;
-  text-decoration: none;
   font-weight: 800;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  transition: all 0.25s ease;
+  font-size: 0.9rem;
 }
 
-.nav-cta:hover {
-  background: var(--gold-light);
-  transform: translateY(-1px);
-}
-
-.hero {
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  padding: 5rem 1.5rem 4rem;
+.nav-links a:hover {
   color: white;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  color: white;
+  padding: 3rem 1.5rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  right: -12%;
-  top: -40%;
-  width: 60%;
-  height: 180%;
-  background: radial-gradient(ellipse, rgba(201, 184, 150, 0.15), transparent 68%);
-}
-
-.hero-inner {
-  max-width: 980px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow {
-  display: inline-flex;
-  background: rgba(201, 184, 150, 0.14);
-  border: 1px solid rgba(201, 184, 150, 0.3);
-  color: var(--gold);
-  padding: 0.42rem 1rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-
-.hero h1 {
+.header h1 {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.4rem, 5vw, 4.1rem);
-  line-height: 1.05;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
 }
 
-.hero h1 span {
-  color: var(--gold);
-}
-
-.hero p {
-  max-width: 760px;
-  margin: 0 auto;
+.header p {
   color: rgba(255, 255, 255, 0.78);
-  font-size: 1.08rem;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.25rem;
+  align-items: start;
 }
 
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+.panel {
+  background: white;
+  border: 1px solid var(--gray-light);
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  padding: 1.25rem;
 }
 
-.toolbar h2 {
+.panel h2 {
   font-family: "Playfair Display", serif;
   color: var(--navy);
-  font-size: 2rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.notice {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #9a3412;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 900;
+  color: var(--navy);
+  font-size: 0.85rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  background: white;
+  color: var(--text);
+}
+
+textarea {
+  min-height: 220px;
+  resize: vertical;
+}
+
+.help {
+  font-size: 0.78rem;
+  color: var(--gray);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
 }
 
 .btn {
   border: 0;
   border-radius: 999px;
-  padding: 0.75rem 1.15rem;
+  padding: 0.8rem 1.15rem;
   font-weight: 900;
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
 }
 
 .btn-primary {
@@ -208,234 +204,160 @@ a {
   background: var(--navy-light);
 }
 
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
 }
 
-.post-card {
-  background: white;
+.btn-light {
+  background: var(--gold-light);
+  color: var(--navy);
+}
+
+.btn-danger {
+  background: #fee2e2;
+  color: var(--red);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
   border: 1px solid var(--gray-light);
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-  transition: 0.25s;
+}
+
+.post-list {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
 }
 
-.post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+.post-item {
+  border: 1px solid var(--gray-light);
+  border-radius: 16px;
+  padding: 1rem;
+  background: white;
 }
 
-.post-cover {
-  height: 170px;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  font-family: "Playfair Display", serif;
-  font-size: 2.3rem;
+.post-item h3 {
+  color: var(--navy);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
 }
 
-.post-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.post-item p {
+  color: var(--gray);
+  font-size: 0.85rem;
 }
 
-.post-body {
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  flex: 1;
-}
-
-.post-meta {
+.post-actions {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
-  color: var(--gray);
-  font-size: 0.78rem;
-  align-items: center;
+  margin-top: 0.8rem;
 }
 
-.tag {
+.mini-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  font-weight: 900;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.mini-btn.edit {
   background: var(--gold-light);
   color: var(--navy);
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-weight: 900;
 }
 
-.post-card h3 {
-  font-size: 1.25rem;
-  line-height: 1.25;
-  color: var(--navy);
+.mini-btn.duplicate {
+  background: #e0f2fe;
+  color: #075985;
 }
 
-.post-card p {
-  color: var(--gray);
-  font-size: 0.95rem;
+.mini-btn.delete {
+  background: #fee2e2;
+  color: var(--red);
 }
 
-.read-more {
-  margin-top: auto;
-  color: var(--gold-dark);
-  font-weight: 900;
-  text-decoration: none;
-  background: none;
-  border: 0;
-  text-align: left;
-  cursor: pointer;
-  font-size: 0.95rem;
-  padding: 0;
-}
-
-.empty {
-  background: white;
-  border: 1px dashed var(--gold);
-  border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
-  color: var(--gray);
-}
-
-.article-view {
-  display: none;
-  background: white;
-  border-radius: 24px;
-  padding: 2rem;
+.preview {
   border: 1px solid var(--gray-light);
-  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 1.25rem;
+  background: white;
+  margin-top: 1rem;
 }
 
-.article-view.active {
+.preview .tag {
+  display: inline-flex;
+  background: var(--gold-light);
+  color: var(--navy);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+}
+
+.preview h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.preview p {
+  margin-bottom: 0.75rem;
+}
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--navy);
+  color: white;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 2000;
+  max-width: 360px;
+}
+
+.toast.show {
   display: block;
 }
 
-.article-cover {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 18px;
-  margin: 1rem 0 1.5rem;
-}
-
-.article-view h2 {
-  font-family: "Playfair Display", serif;
-  color: var(--navy);
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
-  margin: 0.75rem 0 1rem;
-}
-
-.article-content {
-  font-size: 1.04rem;
-  line-height: 1.85;
-  color: #374151;
-}
-
-.article-content p {
-  margin-bottom: 1rem;
-}
-
-.back-btn {
-  background: transparent;
-  border: 0;
-  color: var(--gold-dark);
-  font-weight: 900;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.share-box {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--gray-light);
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.share-label {
-  font-weight: 900;
-  color: var(--navy);
-}
-
-.share-link {
+.status-pill {
+  display: inline-flex;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
   background: var(--gold-light);
   color: var(--navy);
-  border: 0;
-  border-radius: 999px;
-  padding: 0.65rem 1rem;
   font-weight: 900;
-  cursor: pointer;
+  font-size: 0.72rem;
 }
 
-.footer {
-  background: var(--navy);
-  color: rgba(255, 255, 255, 0.75);
-  text-align: center;
-  padding: 2rem 1.5rem;
-}
-
-.footer img {
-  height: 54px;
-  margin-bottom: 0.8rem;
-}
-
-.footer a {
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.loading {
-  color: var(--gray);
-  text-align: center;
-  padding: 2rem;
+.danger-text {
+  color: var(--red);
 }
 
 @media (max-width: 900px) {
-  .posts-grid {
-    grid-template-columns: 1fr 1fr;
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-container {
+    flex-wrap: wrap;
   }
 
   .nav-logo img {
     height: 46px;
-  }
-
-  .nav-links {
-    gap: 0.8rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .nav-container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .posts-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 3.5rem 1.25rem;
-  }
-
-  .article-view {
-    padding: 1.25rem;
-  }
-
-  .nav-cta {
-    display: none;
   }
 }
 </style>
@@ -451,72 +373,135 @@ a {
 
     <ul class="nav-links">
       <li><a href="../">Inicio</a></li>
-      <li><a href="./" class="active">Blog</a></li>
-      <li><a href="../#cursos">Cursos</a></li>
+      <li><a href="../blog/">Ver blog</a></li>
       <li><a href="../#contacto">Contacto</a></li>
     </ul>
-
-    <a href="https://wa.me/529994530002" class="nav-cta" target="_blank" rel="noopener">
-      WhatsApp
-    </a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="hero-inner">
-    <span class="eyebrow">Blog AFINE</span>
-    <h1>Finanzas explicadas de forma <span>clara y práctica</span></h1>
-    <p>
-      Ideas, guías y reflexiones para tomar mejores decisiones con tu dinero,
-      entender el mercado y usar herramientas modernas sin complicarte.
-    </p>
-  </div>
+<header class="header">
+  <h1>Admin de Blog AFINE</h1>
+  <p>Guarda artículos en GitHub y publica en Vercel.</p>
 </header>
 
 <main class="container">
-  <section id="blogList">
-    <div class="toolbar">
-      <h2>Artículos recientes</h2>
-      <a class="btn btn-primary" href="https://wa.me/529994530002" target="_blank" rel="noopener">
-        Preguntar por cursos
-      </a>
+
+  <section class="panel">
+    <div class="notice">
+      <strong>Cómo funciona:</strong> al guardar, se actualiza
+      <code>content/blog/posts.json</code> en GitHub. Vercel hará redeploy y el artículo quedará público en /blog.
     </div>
 
-    <div class="loading" id="loading">Cargando artículos...</div>
-    <div class="posts-grid" id="postsGrid"></div>
+    <h2>Editor de artículo</h2>
 
-    <div class="empty" id="emptyState" style="display:none">
-      Todavía no hay artículos publicados.
-    </div>
+    <form id="postForm">
+      <input type="hidden" id="editingId">
+
+      <div class="form-grid">
+
+        <div class="field full">
+          <label for="title">Título</label>
+          <input id="title" required placeholder="Ej. Cómo ordenar tus finanzas personales">
+        </div>
+
+        <div class="field">
+          <label for="slug">Slug / ID</label>
+          <input id="slug" required placeholder="como-ordenar-finanzas-personales">
+          <span class="help">Se genera automáticamente con el título. Será la URL del blog.</span>
+        </div>
+
+        <div class="field">
+          <label for="category">Categoría</label>
+          <select id="category">
+            <option>Finanzas personales</option>
+            <option>Inversión</option>
+            <option>Mercado bursátil</option>
+            <option>IA financiera</option>
+            <option>Educación financiera</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="date">Fecha</label>
+          <input id="date" type="date">
+        </div>
+
+        <div class="field">
+          <label for="author">Autor</label>
+          <input id="author" value="AFINE">
+        </div>
+
+        <div class="field">
+          <label for="status">Estado</label>
+          <select id="status">
+            <option value="published">Publicado</option>
+            <option value="draft">Borrador</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="cover">Imagen de portada URL opcional</label>
+          <input id="cover" placeholder="https://... o ../imagen.png">
+        </div>
+
+        <div class="field full">
+          <label for="excerpt">Resumen corto</label>
+          <textarea id="excerpt" style="min-height:90px" required placeholder="Resumen visible en la tarjeta del blog."></textarea>
+        </div>
+
+        <div class="field full">
+          <label for="content">Contenido</label>
+          <textarea id="content" required placeholder="Escribe el artículo. Separa párrafos con saltos de línea."></textarea>
+        </div>
+
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Guardar artículo en GitHub</button>
+        <button class="btn btn-light" type="button" id="previewBtn">Previsualizar</button>
+        <button class="btn btn-outline" type="button" id="resetBtn">Nuevo</button>
+      </div>
+    </form>
+
+    <div class="preview" id="previewBox" style="display:none"></div>
   </section>
 
-  <article class="article-view" id="articleView"></article>
+  <aside class="panel">
+    <h2>Artículos</h2>
+
+    <div class="actions" style="margin-bottom:1rem">
+      <button class="btn btn-primary" id="saveAllBtn" type="button">Guardar cambios</button>
+      <button class="btn btn-gold" id="reloadBtn" type="button">Recargar desde GitHub</button>
+      <a class="btn btn-light" href="../blog/">Ver blog</a>
+    </div>
+
+    <div class="post-list" id="postList">
+      <p style="color:var(--gray)">Cargando...</p>
+    </div>
+  </aside>
+
 </main>
 
-<footer class="footer">
-  <img src="../logo Afine.png" alt="AFINE Logo">
-  <p>AFINE — Finanzas reales para resultados reales</p>
-  <p style="margin-top:.5rem;font-size:.85rem">
-    Mérida, Yucatán ·
-    <a href="https://wa.me/529994530002" target="_blank" rel="noopener">999 453 0002</a>
-    ·
-    <a href="mailto:afinemerida@gmail.com">afinemerida@gmail.com</a>
-  </p>
-</footer>
+<div class="toast" id="toast"></div>
 
 <script>
 let POSTS = [];
 
-function formatDate(date) {
-  try {
-    return new Date(date + "T00:00:00").toLocaleDateString("es-MX", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-  } catch (error) {
-    return date || "";
-  }
+const $ = function (id) {
+  return document.getElementById(id);
+};
+
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function slugify(text) {
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
 }
 
 function escapeHtml(str) {
@@ -530,204 +515,307 @@ function escapeHtml(str) {
   });
 }
 
-function getCurrentPostId() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get("post");
+function toast(message) {
+  const el = $("toast");
+  el.textContent = message;
+  el.classList.add("show");
+
+  setTimeout(function () {
+    el.classList.remove("show");
+  }, 3200);
 }
 
-function getPostUrl(id) {
-  return window.location.origin + "/blog/?post=" + encodeURIComponent(id);
+function getPassword() {
+  let password = sessionStorage.getItem("afine_admin_password");
+
+  if (!password) {
+    password = prompt("Contraseña de administrador");
+
+    if (password) {
+      sessionStorage.setItem("afine_admin_password", password);
+    }
+  }
+
+  return password;
+}
+
+function formData() {
+  return {
+    id: $("slug").value.trim() || slugify($("title").value),
+    title: $("title").value.trim(),
+    category: $("category").value,
+    date: $("date").value || today(),
+    author: $("author").value.trim() || "AFINE",
+    excerpt: $("excerpt").value.trim(),
+    cover: $("cover").value.trim(),
+    content: $("content").value.trim(),
+    status: $("status").value || "published"
+  };
+}
+
+function setForm(post) {
+  $("editingId").value = post.id || "";
+  $("title").value = post.title || "";
+  $("slug").value = post.id || "";
+  $("category").value = post.category || "Finanzas personales";
+  $("date").value = post.date || today();
+  $("author").value = post.author || "AFINE";
+  $("status").value = post.status || "published";
+  $("cover").value = post.cover || "";
+  $("excerpt").value = post.excerpt || "";
+  $("content").value = post.content || "";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function clearForm() {
+  $("postForm").reset();
+  $("editingId").value = "";
+  $("date").value = today();
+  $("author").value = "AFINE";
+  $("status").value = "published";
+  $("previewBox").style.display = "none";
 }
 
 async function loadPosts() {
   try {
-    const response = await fetch("/content/blog/posts.json?v=" + Date.now(), {
+    const response = await fetch("/api/posts", {
       cache: "no-store"
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      throw new Error("No se pudo cargar posts.json");
+      throw new Error(data.error || "No se pudo cargar");
     }
 
-    POSTS = await response.json();
+    POSTS = Array.isArray(data.posts) ? data.posts : [];
 
-    POSTS = Array.isArray(POSTS) ? POSTS : [];
-
-    POSTS = POSTS
-      .filter(function (post) {
-        return post.status !== "draft";
-      })
-      .sort(function (a, b) {
-        return String(b.date || "").localeCompare(String(a.date || ""));
-      });
-
-    renderPosts();
-
-    const postId = getCurrentPostId();
-
-    if (postId) {
-      openPost(postId, false);
-    }
+    renderList();
+    toast("Artículos cargados desde GitHub");
 
   } catch (error) {
-    document.getElementById("loading").textContent =
-      "No se pudieron cargar los artículos.";
-    console.error(error);
+    $("postList").innerHTML =
+      '<p class="danger-text">Error: ' + escapeHtml(error.message) + "</p>";
   }
 }
 
-function renderPosts() {
-  document.getElementById("loading").style.display = "none";
+async function savePosts() {
+  const password = getPassword();
 
-  const grid = document.getElementById("postsGrid");
-  const empty = document.getElementById("emptyState");
+  if (!password) {
+    throw new Error("Falta contraseña de administrador");
+  }
 
-  grid.innerHTML = "";
-  empty.style.display = POSTS.length ? "none" : "block";
+  const response = await fetch("/api/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-admin-password": password
+    },
+    body: JSON.stringify({
+      posts: POSTS
+    })
+  });
 
-  POSTS.forEach(function (post) {
-    const card = document.createElement("article");
-    card.className = "post-card";
+  const data = await response.json();
 
-    const coverHtml = post.cover
-      ? `<img src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.title)}">`
-      : "AF";
+  if (!response.ok) {
+    if (response.status === 401) {
+      sessionStorage.removeItem("afine_admin_password");
+    }
 
-    card.innerHTML = `
-      <div class="post-cover">${coverHtml}</div>
+    throw new Error(data.error || "No se pudo guardar en GitHub");
+  }
 
-      <div class="post-body">
-        <div class="post-meta">
-          <span class="tag">${escapeHtml(post.category || "Blog")}</span>
-          <span>${formatDate(post.date || "")}</span>
-        </div>
+  POSTS = Array.isArray(data.posts) ? data.posts : POSTS;
+  renderList();
 
-        <h3>${escapeHtml(post.title)}</h3>
-        <p>${escapeHtml(post.excerpt || "")}</p>
+  return data;
+}
 
-        <button class="read-more" data-id="${escapeHtml(post.id)}">
-          Leer artículo →
-        </button>
+function renderList() {
+  const list = $("postList");
+
+  const posts = [...POSTS].sort(function (a, b) {
+    return String(b.date || "").localeCompare(String(a.date || ""));
+  });
+
+  list.innerHTML = "";
+
+  if (!posts.length) {
+    list.innerHTML = '<p style="color:var(--gray)">Todavía no hay artículos.</p>';
+    return;
+  }
+
+  posts.forEach(function (post) {
+    const item = document.createElement("div");
+    item.className = "post-item";
+
+    const publicUrl = "/blog/?post=" + encodeURIComponent(post.id || "");
+
+    item.innerHTML = `
+      <h3>${escapeHtml(post.title)}</h3>
+
+      <p>
+        ${escapeHtml(post.category || "Blog")} ·
+        ${escapeHtml(post.date || "")} ·
+        <span class="status-pill">${escapeHtml(post.status || "published")}</span>
+      </p>
+
+      <p>${escapeHtml(post.excerpt || "")}</p>
+
+      <p style="margin-top:.5rem;font-size:.78rem">
+        URL:
+        <a href="${publicUrl}" target="_blank" style="color:var(--navy);font-weight:900">
+          ${publicUrl}
+        </a>
+      </p>
+
+      <div class="post-actions">
+        <button class="mini-btn edit" data-action="edit" data-id="${escapeHtml(post.id)}">Editar</button>
+        <button class="mini-btn duplicate" data-action="duplicate" data-id="${escapeHtml(post.id)}">Duplicar</button>
+        <button class="mini-btn delete" data-action="delete" data-id="${escapeHtml(post.id)}">Eliminar</button>
       </div>
     `;
 
-    grid.appendChild(card);
+    list.appendChild(item);
   });
 
-  document.querySelectorAll(".read-more").forEach(function (button) {
+  list.querySelectorAll("button").forEach(function (button) {
     button.addEventListener("click", function () {
-      openPost(button.dataset.id, true);
+      handleAction(button.dataset.action, button.dataset.id);
     });
   });
 }
 
-function openPost(id, updateUrl = true) {
-  const cleanId = String(id || "").trim();
-
+async function handleAction(action, id) {
   const post = POSTS.find(function (item) {
-    return String(item.id || "").trim() === cleanId;
+    return item.id === id;
   });
 
-  if (!post) {
-    showPostNotFound(cleanId);
+  if (!post) return;
+
+  if (action === "edit") {
+    setForm(post);
     return;
   }
 
-  if (updateUrl) {
-    window.history.pushState({}, "", "/blog/?post=" + encodeURIComponent(cleanId));
+  if (action === "duplicate") {
+    const copy = {
+      ...post,
+      id: post.id + "-copia",
+      title: post.title + " copia",
+      date: today(),
+      status: "draft"
+    };
+
+    POSTS.unshift(copy);
+    renderList();
+    toast("Duplicado como borrador. Da guardar para subirlo a GitHub.");
+    return;
   }
 
-  document.getElementById("blogList").style.display = "none";
+  if (action === "delete") {
+    const confirmDelete = confirm("¿Eliminar este artículo definitivamente del blog?");
 
-  const article = document.getElementById("articleView");
+    if (!confirmDelete) return;
 
-  const paragraphs = String(post.content || "")
+    const previousPosts = [...POSTS];
+
+    POSTS = POSTS.filter(function (item) {
+      return item.id !== id;
+    });
+
+    renderList();
+
+    try {
+      await savePosts();
+      toast("Artículo eliminado y guardado en GitHub. Vercel hará redeploy.");
+    } catch (error) {
+      POSTS = previousPosts;
+      renderList();
+      toast(error.message || "No se pudo eliminar en GitHub");
+    }
+  }
+}
+
+$("title").addEventListener("input", function () {
+  if (!$("editingId").value) {
+    $("slug").value = slugify($("title").value);
+  }
+});
+
+$("postForm").addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const post = formData();
+
+  if (!post.title || !post.excerpt || !post.content) {
+    toast("Completa título, resumen y contenido");
+    return;
+  }
+
+  const editingId = $("editingId").value;
+
+  POSTS = POSTS.filter(function (item) {
+    return item.id !== editingId && item.id !== post.id;
+  });
+
+  POSTS.unshift(post);
+
+  try {
+    await savePosts();
+    $("editingId").value = post.id;
+    toast("Artículo guardado en GitHub. Vercel hará redeploy.");
+  } catch (error) {
+    toast(error.message || "No se pudo guardar en GitHub");
+  }
+});
+
+$("previewBtn").addEventListener("click", function () {
+  const post = formData();
+
+  const paragraphs = post.content
     .split(/\n{1,}/)
     .filter(Boolean)
     .map(function (paragraph) {
-      return `<p>${escapeHtml(paragraph)}</p>`;
+      return "<p>" + escapeHtml(paragraph) + "</p>";
     })
     .join("");
 
-  const coverHtml = post.cover
-    ? `<img class="article-cover" src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.title)}">`
-    : "";
-
-  article.innerHTML = `
-    <button class="back-btn" onclick="backToList()">← Volver al blog</button>
-
-    <div class="post-meta">
-      <span class="tag">${escapeHtml(post.category || "Blog")}</span>
-      <span>${formatDate(post.date || "")}</span>
-      <span>${escapeHtml(post.author || "AFINE")}</span>
-    </div>
-
-    <h2>${escapeHtml(post.title)}</h2>
-
-    ${coverHtml}
-
-    <div class="article-content">
-      ${paragraphs}
-    </div>
-
-    <div class="share-box">
-      <span class="share-label">URL del artículo:</span>
-      <button class="share-link" onclick="copyPostUrl('${escapeHtml(post.id)}')">
-        Copiar link
-      </button>
-    </div>
+  $("previewBox").innerHTML = `
+    <span class="tag">${escapeHtml(post.category)}</span>
+    <h3>${escapeHtml(post.title || "Título del artículo")}</h3>
+    <p>
+      <strong>${escapeHtml(post.date)}</strong> ·
+      ${escapeHtml(post.author)} ·
+      ${escapeHtml(post.status)}
+    </p>
+    <p>${escapeHtml(post.excerpt)}</p>
+    <div>${paragraphs}</div>
   `;
 
-  article.classList.add("active");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
+  $("previewBox").style.display = "block";
+});
 
-function showPostNotFound(id) {
-  document.getElementById("blogList").style.display = "none";
+$("resetBtn").addEventListener("click", clearForm);
 
-  const article = document.getElementById("articleView");
+$("reloadBtn").addEventListener("click", loadPosts);
 
-  article.innerHTML = `
-    <button class="back-btn" onclick="backToList()">← Volver al blog</button>
-    <h2>Artículo no encontrado</h2>
-    <div class="article-content">
-      <p>No existe un artículo publicado con el slug: <strong>${escapeHtml(id)}</strong></p>
-    </div>
-  `;
-
-  article.classList.add("active");
-}
-
-function backToList() {
-  document.getElementById("articleView").classList.remove("active");
-  document.getElementById("blogList").style.display = "block";
-
-  window.history.pushState({}, "", "/blog/");
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-async function copyPostUrl(id) {
-  const url = getPostUrl(id);
-
+$("saveAllBtn").addEventListener("click", async function () {
   try {
-    await navigator.clipboard.writeText(url);
-    alert("Link copiado: " + url);
+    await savePosts();
+    toast("Cambios guardados en GitHub. Vercel hará redeploy.");
   } catch (error) {
-    prompt("Copia el link del artículo:", url);
-  }
-}
-
-window.addEventListener("popstate", function () {
-  const postId = getCurrentPostId();
-
-  if (postId) {
-    openPost(postId, false);
-  } else {
-    document.getElementById("articleView").classList.remove("active");
-    document.getElementById("blogList").style.display = "block";
+    toast(error.message || "No se pudo guardar en GitHub");
   }
 });
+
+$("date").value = today();
 
 loadPosts();
 </script>
