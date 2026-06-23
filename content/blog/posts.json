@@ -1,7 +1,7 @@
 [
   {
-    "id": "blog1",
-    "title": "TARJETA",
+    "id": "blog2",
+    "title": "hipotecario",
     "category": "Finanzas personales",
     "date": "2026-06-23",
     "author": "AFINE",
@@ -9,6 +9,6 @@
     "cover": "",
     "content": "sabes que.....",
     "status": "published",
-    "updatedAt": "2026-06-23T20:19:46.243Z"
+    "updatedAt": "2026-06-23T20:21:29.546Z"
   }
 ]
