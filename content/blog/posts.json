@@ -1,38 +1,14 @@
 [
   {
-    "id": "tarejta-de-credito",
-    "title": "TAREJTA DE CREDITO",
-    "category": "Finanzas personales",
-    "date": "2026-06-23",
-    "author": "JORGE DAVID",
-    "excerpt": "katu2579",
-    "cover": "",
-    "content": "SABIAS QUE LA TARJETA DE CREDITO ES UN INSTRUMENTO DE FINANCIAMIENTO GRATIS A 50 O 60 DIAS?, CONOCER EL CICLO DE TU TARJETA ES MUY RELEVANTE",
-    "status": "published",
-    "updatedAt": "2026-06-23T19:26:43.759Z"
-  },
-  {
-    "id": "titulo",
-    "title": "titulo",
-    "category": "Finanzas personales",
-    "date": "2026-06-23",
-    "author": "jorge",
-    "excerpt": "resuen",
-    "cover": "",
-    "content": "contenido",
-    "status": "published",
-    "updatedAt": "2026-06-23T19:26:43.759Z"
-  },
-  {
-    "id": "finanzas-personales-basicas",
-    "title": "Finanzas personales: por dónde empezar sin complicarte",
+    "id": "blog1",
+    "title": "credito personal",
     "category": "Finanzas personales",
     "date": "2026-06-23",
     "author": "AFINE",
-    "excerpt": "Una guía inicial para ordenar ingresos, gastos, ahorro y decisiones de dinero con criterios simples.",
+    "excerpt": "maneja de credito personal",
     "cover": "",
-    "content": "El primer paso para mejorar tus finanzas no es invertir ni abrir una cuenta nueva: es entender qué entra, qué sale y qué decisiones se repiten cada mes.\n\nEn AFINE recomendamos comenzar con tres columnas: ingresos reales, gastos fijos y gastos variables. Con esa fotografía puedes detectar fugas de dinero, prioridades y oportunidades de ahorro.\n\nDespués viene la parte más importante: convertirlo en una rutina. No necesitas hacerlo perfecto; necesitas revisarlo con constancia y tomar decisiones con información.",
+    "content": "sabias que....................................................................................",
     "status": "published",
-    "updatedAt": "2026-06-23T19:26:43.759Z"
+    "updatedAt": "2026-06-23T19:30:24.580Z"
   }
 ]
